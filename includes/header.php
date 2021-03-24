@@ -12,7 +12,7 @@
 
     <!-- Titulo & icono de pestaña -->
     <title>Mecato Valluno</title>
-    <link href="../loginppg42/includes/images/logotipo.PNG" rel="shortcut icon"/>
+    <link href="includes/images/logotipo.png" rel="shortcut icon"/>
 </head>
 
 <body>
@@ -26,13 +26,13 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <img src="../loginppg42/includes/images/logotipo.PNG" alt="" width="70" height="70">
-            </a>
+            
+              <img src="includes/images/logotipo.png" alt="" width="70" height="70">
+            
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active fs-1 fw-italic" href="#">MECATO VALLUNO</a>
+                  <a class="nav-link active fs-1 fw-italic" href="www.google.com.co">MECATO VALLUNO</a>
                 </li>
               </ul>
               <span class="navbar-text">

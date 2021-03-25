@@ -1,7 +1,6 @@
-<p></p>
+<p></p> <!-- espacio entre contenido y footer -->
 
 <footer class="bg-ligh text-center text-lg-start">
-
   <div class="container p-4">
     <!--Grid row-->
     <div class="row">
@@ -28,17 +27,15 @@
           "Mecato Valluno" debe de permitir administrar y comercializar sus productos en America Latina.
           <br>Utilizando el lenguaje de programacion PHP, gestor DB MySql, CSS (Bootstrap) y tecnica AJAX.
         </p>
-      </div>
-      <!--Grid column-->
-    </div>
-    <!--Grid row-->
-  </div>
-  <!-- Grid container -->
+      </div> <!--Grid column-->
+    </div> <!--Grid row-->
+  </div> <!-- Grid container -->
 
+  <!-- ICONOS -->
   <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-    <div class="container justify-content-center">
-      <div class="row-justify">
-        <div class="col-sm-12 col-xs-12">
+    <div class="container justify-content-center">  <!-- contendor de columnas/filas -->
+      <div class="row-justify">   <!-- distribuidor de columnas/filas -->
+        <div class="col-sm-12 col-xs-12"> <!-- tamaños de distribucion de columnas/filas -->
           <div class="nav-item dropdown">
 
             <a class="navbar-brand" href="#">

@@ -1,5 +1,5 @@
 <!-- solicito el header -->
-<?php include("includes/header.php") ?>
+<?php include("../includes/header.php") ?>
 
 <!-- body de la pagina -->
 
@@ -67,7 +67,7 @@
       <div class="card mb-3" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="includes/images/logomv.PNG" alt="...">
+      <img src="../includes/images/logomv.PNG" alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body">
@@ -90,4 +90,4 @@
   <!-- fin body de la pagina -->
 
   <!-- solicito el footer -->
-  <?php include("includes/footer.php") ?>
+  <?php include("../includes/footer.php") ?>

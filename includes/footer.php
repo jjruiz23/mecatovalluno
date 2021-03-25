@@ -42,16 +42,16 @@
           <div class="nav-item dropdown">
 
             <a class="navbar-brand" href="#">
-              <img src="includes/images/face.png" alt="" width="25" height="20">
+              <img src="../includes/images/face.png" alt="" width="25" height="20">
             </a>
             <a class="navbar-brand" href="#">
-              <img src="includes/images/twt.png" alt="" width="25" height="20">
+              <img src="../includes/images/twt.png" alt="" width="25" height="20">
             </a>
             <a class="navbar-brand" href="#">
-              <img src="includes/images/inst.png" alt="" width="25" height="20">
+              <img src="../includes/images/inst.png" alt="" width="25" height="20">
             </a>
             <a class="navbar-brand" href="#">
-              <img src="includes/images/gh.png" alt="" width="25" height="20">
+              <img src="../includes/images/gh.png" alt="" width="25" height="20">
             </a>
 
           </div>  <!--col-sm-12-->

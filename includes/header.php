@@ -12,7 +12,7 @@
 
     <!-- Titulo & icono de pestaña -->
     <title>Mecato Valluno</title>
-    <link href="includes/images/logotipo.png" rel="shortcut icon"/>
+    <link href="../includes/images/logotipo.png" rel="shortcut icon"/>
 </head>
 
 <body>
@@ -27,18 +27,19 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <div class="container-fluid">
             
-              <img src="includes/images/logotipo.png" alt="" width="70" height="70">
-            
+              <img src="../includes/images/logHeader.png" alt="" width="220" height="70">
+            <!--
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active fs-1 fw-italic" href="www.google.com.co">MECATO VALLUNO</a>
+                  <a class="nav-link active fw-italic" href="www.google.com.co">MECATO VALLUNO</a>
                 </li>
-              </ul>
+              </ul> -->
               <span class="navbar-text">
                 Usuario que este usando el sistema
               </span>
             </div>
+            
           </div>
         </nav>
 

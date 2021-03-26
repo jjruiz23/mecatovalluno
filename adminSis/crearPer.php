@@ -5,63 +5,12 @@
 
 <p></p> <!--  espacio entre contenidos -->
 
-<!-- menu -->
-
-<div class="container"> <!-- contendor de columnas/filas -->
-    <div class="row-justify"> <!-- distribuidor de columnas/filas -->
-      <div class="col-sm-12 col-xs-12"> <!-- tamaños de distribucion de columnas/filas -->
-
-      <div class="card text-center">
-
-        <!--  Barra de botones de navegacion -->
-        <nav class="navbar navbar-dark bg-dark">
-          <form class="container-fluid justify-content-center">
-            <li class="nav-item dropdown">
-              <a class="btn btn-outline-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Personal
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Crear</a></li>
-                <li><a class="dropdown-item" href="#">Buscar</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="btn btn-outline-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Cliente
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Crear</a></li>
-                <li><a class="dropdown-item" href="#">Buscar</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="btn btn-outline-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Roles
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Crear</a></li>
-                <li><a class="dropdown-item" href="#">Asigar Rol</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="btn btn-outline-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Gestion Tiendas
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Crear Pais</a></li>
-                <li><a class="dropdown-item" href="#">Crear Ciudad</a></li>
-                <li><a class="dropdown-item" href="#">Crear Sede</a></li>
-              </ul>
-            </li>
-        </nav>
-
-      </div> <!-- fin de card y menu -->
-
-    </div>   <!--col-sm-12-->
-  </div> <!--row-->
-</div> <!--container MAYOR-->
+<!-- solicito el menu -->
+<?php include("barraMenu.php") ?>
 
 <p></p> <!--espacio entre menu y contenido-->
+
+<!-- CONTENIDO DEL MODULO -->
 
 <!--container formulario-->
 <div class="container"> <!-- contendor de columnas/filas -->
@@ -72,7 +21,7 @@
       <div class="card">
         <h5 class="card-header">Personal</h5> <!--titulo -->
         <div class="card-body">
-          <a href="#" class="btn btn-outline-success">Buscar</a> <!--boton -->
+          <a href="buscPer.php" class="btn btn-outline-success">Buscar</a> <!--boton -->
           <p></p>
           <h5 class="card-title">Registrar Nuevo</h5>
           <!-- Primer fila de inputs -->
@@ -176,7 +125,6 @@
             </div>
           </div>      
           
-
           <!-- botones formulario -->
           <p></p>
           <a href="#" class="btn btn-success">Añadir Nuevo</a>
@@ -185,10 +133,6 @@
       </div>
 
       </form>
-
-
-
-
 
     </div>   <!--col-sm-12-->
   </div> <!--row-->

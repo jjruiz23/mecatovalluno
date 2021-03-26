@@ -3,11 +3,16 @@
 
 <!-- body de la pagina -->
 
+<p></p> <!--  espacio entre contenidos -->
+
 <!-- menu -->
-<div class="container">  <!-- contendor de columnas/filas -->
-  <div class="row-justify"> <!-- distribuidor de columnas/filas -->
-    <div class="col-sm-12 col-xs-12">  <!-- tamaños de distribucion de columnas/filas -->
+
+<div class="container"> <!-- contendor de columnas/filas -->
+    <div class="row-justify"> <!-- distribuidor de columnas/filas -->
+      <div class="col-sm-12 col-xs-12"> <!-- tamaños de distribucion de columnas/filas -->
+
       <div class="card text-center">
+
         <!--  Barra de botones de navegacion -->
         <nav class="navbar navbar-dark bg-dark">
           <form class="container-fluid justify-content-center">
@@ -16,7 +21,7 @@
                 Personal
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Crear</a></li>
+                <li><a class="dropdown-item" href="crearPer.php">Crear</a></li>
                 <li><a class="dropdown-item" href="#">Buscar</a></li>
               </ul>
             </li>
@@ -49,39 +54,20 @@
               </ul>
             </li>
         </nav>
+        <!-- card con informacion del modulo -->
+        <div class="card-body card-text-left">
+          <h5 class="card-title">Menu Principal</h5>
+          <p class="card-text">Te permite navegar por los diferentes modulos del sistema para administrar la informacion</p>
+          <!--     <a href="#" class="btn btn-primary">Go somewhere</a>   -->
+        </div>
+      </div> <!-- fin de card y menu -->
 
-      </div> <!--col-sm-12-->
-    </div> <!--row-->
-  </div> <!--container MAYOR-->
-
-  <p></p> <!--  espacio entre contenidos -->
-  <!-- contenido -->
-  <div class="container">
-    <div class="row-justify">
-      <div class="col-sm-12 col-xs-12">
-        <div class="card text-center">
-
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="../includes/images/logomv.PNG" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div> <!--col-sm-12-->
-      </div> <!--row-->
-    </div> <!--container MAYOR-->
+    </div>   <!--col-sm-12-->
+  </div> <!--row-->
+</div> <!--container MAYOR-->
 
 
-    <!-- fin body de la pagina -->
+<!-- fin body de la pagina -->
 
-    <!-- solicito el footer -->
-    <?php include("../includes/footer.php") ?>
+<!-- solicito el footer -->
+<?php include("../includes/footer.php") ?>

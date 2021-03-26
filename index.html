@@ -1,6 +1,5 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
@@ -8,11 +7,11 @@
 
 <head>
 	<meta charset="UTF-8">
-	
-	    <!-- Titulo & icono de pestaña -->
-    <title>Mecato Valluno</title>
-    <link href="includes/images/logotipo.png" rel="shortcut icon"/>
-	
+
+	<!-- Titulo & icono de pestaña -->
+	<title>Mecato Valluno</title>
+	<link href="includes/images/logotipo.png" rel="shortcut icon" />
+
 	<!--Made with love by Mutiullah Samim -->
 
 	<!--Bootsrap 4 CDN-->
@@ -29,8 +28,10 @@
 </head>
 
 <body>
-	<div class="container">  <!-- contendor de columnas/filas -->
-		<div class="d-flex justify-content-center h-100"> <!-- distribuidor de columnas/filas -->
+	<div class="container">
+		<!-- contendor de columnas/filas -->
+		<div class="d-flex justify-content-center h-100">
+			<!-- distribuidor de columnas/filas -->
 			<div class="card">
 				<div class="card-header">
 					<br>
@@ -52,25 +53,25 @@
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="Usario">
+							<input type="text" class="form-control" id="usuario" name="" placeholder="Usario" autofocus>
 						</div>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" class="form-control" placeholder="Contraseña">
+							<input type="password" class="form-control" id="password" name="" placeholder="Contraseña">
 						</div>
 						<div class="row align-items-center remember">
 							<input type="checkbox">Recordarme
 						</div>
 						<div class="form-group">
 							<!--Botones -->
-							<input type="submit" value="Login" class="btn float-right login_btn">
+							<input type="submit" id="entrarSistema" value="Login" class="btn float-right login_btn">
 						</div>
 					</form>
 				</div>
 				<!--Footer de tarjeta de ingreso-->
-				<div class="card-footer">					
+				<div class="card-footer">
 					<div class="d-flex justify-content-center links">
 						¿No tienes una cuenta?<a href="menuAdminSis.php">Registrarse</a>
 					</div>
@@ -84,3 +85,43 @@
 </body>
 
 </html>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<!-- Script para funcion de evento click boton entrar -->
+
+<script type="text/javascript">  // creo el script de tipo texto
+	$(document).ready(function () {  // cargo la funcion
+		$('#entrarSistema').click(function () {  // asigno funcion click al boton Entrar utilizando #
+			if ($('#usuario').val() == "") {   // si el input usuario esta vacio
+				<div class="alert alert-primary" role="alert">
+					A simple primary alert—check it out!
+				</div>
+				// mensaje de alerta indicando que el campo esta vacio
+				return false;  // detener el if
+			} else if ($('#password').val() == "") {  // si el input de password esta vacio 
+				alertify.alert("Debes agregar la Contraseña").setHeader('<em> Titulo </em> ');  // mensaje de alerta indicando que el campo esta vacio
+				return false;  // detener el else if
+			}  // cierre funcion click
+
+			// crear paquete de datos para pasar al ajax
+			// cre una cadena y le paso los datos ingresados en los inputs de usuario y password
+
+			cadena = "usuario=" + $('#usuario').val() +   // le asigno los valores de #usuario a usuario
+				"&password=" + $('#password').val();  // asigno los valores de #password a pasword
+			// creo el ajax
+			$.ajax({
+				type: "POST", // defino el tipo POTS=ENVIO
+				url: "php/login.php",  // defino enviar los datos a  login.php
+				data: cadena,  // seleciono los datos empaquetados en cadena
+				success: function (r) { //  establesco que ejecutar con los datos recibidos en (r)
+					if (r == 1) {  // si los datos recibidos son iguales a 1
+						window.location = "adminSis/menuPpl.php";  // llevar a la pagina inicio.php
+					} else {  //sino
+						alertify.alert("Fallo al entrar :(").setHeader('<em> Titulo </em> ');	// mensaje de alerta para indicar el fallo.
+					}
+				} // cirre de funcion r
+			}); // cierre del ajax
+		});	// cierre del evento click
+	}); // cierre de la funcion
+</script>

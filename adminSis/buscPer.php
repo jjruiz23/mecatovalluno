@@ -13,13 +13,10 @@
 
 <!-- CONTENIDO DEL MODULO -->
 
-<!--container formulario-->
-<div class="container">
-    <!-- contendor de columnas/filas -->
-    <div class="row-justify">
-        <!-- distribuidor de columnas/filas -->
-        <div class="col-sm-12 col-xs-12">
-            <!-- tamaños de distribucion de columnas/filas -->
+<!--container botones y formulario de busqueda-->
+<div class="container">  <!-- contendor de columnas/filas -->
+    <div class="row-justify">   <!-- distribuidor de columnas/filas -->
+        <div class="col-sm-12 col-xs-12">    <!-- tamaños de distribucion de columnas/filas -->
 
             <!-- card con informacion del modulo -->
             <div class="card">
@@ -31,14 +28,14 @@
                     <div class="row g-3">
                         <div class="col-sm-2 col-md-2 col-xs-2">
                             <a href="crearPer.php" class="btn btn-outline-success">Crear</a>
+                            <a href="consoPer.php" class="btn btn-outline-success">Consolidado</a>
                             <!--boton -->
                         </div>
                         <div class="col-sm">
                         </div>
                         <div class="col-sm-4 col-md-4 col-xs-4">
-                            <form action="buscEst.php" method="POST" id="respuesta">
-                                <!-- recargo pagina con el resultado del query -->
-                                <input type="text" style="text-align:center" name="buscador" id="buscador" placeholder="Ingrese Codigo"> <!-- input captura de datos-->
+                            <form action="../adminSis/buscPer.php" method = "post" id="respuesta"> <!-- recargo pagina con el resultado del query -->
+                                <input type="text" style="text-align:center" name="buscador" id="buscador" placeholder="Ingrese ID"> <!-- input captura de datos-->
                                 <button type="submit" class="btn btn-success" id="buscar"> Buscar </button> <!-- boton para activar formulario -->
                             </form>
                         </div>
@@ -54,22 +51,21 @@
 
                                     <?php  // inicio lineas php
 
-                                    include 'php/buscadorEst.php'; // invoco el query en buscadorEst.php
+                                    include '../dataBase/buscadorPer.php'; // invoco el query en buscadorPer.php
 
                                     //entonces obtenga un array con los datos de la variable $result proveniente de cbrrador2.php
                                     while ($row = mysqli_fetch_array($result)) { ?>
                                         <!--los datos de los campos en Bd los almaceno en la variable $row -->
 
                                         <!-- inicio lineas html para graficar tabla -->
-                                        <div class="table-responsive">
-                                            <table class="table table-sm table-striped">
+                                        <div class="table-responsive table-bordered border-success">
+                                            <table class="table table-sm table-striped border-success ">
                                                 <!-- tabla con campos pequeños -->
                                                 <h4 class="text-center"> Resultado de busqueda </h4>
 
-                                                <thead class="thead-dark">
+                                                <thead> <!-- bloque de filas <tr> -->
                                                     <!-- para resaltar encabezados -->
-                                                    <tr>
-                                                        <!-- encabezados de tabla -->
+                                                    <tr class="table-dark">   <!-- encabezados de tabla -->
                                                         <th>Tipo Documento</th>
                                                         <th>Numero Documento</th>
                                                         <th>Nombre</th>
@@ -96,11 +92,11 @@
                                                     <td>
                                                         <!--enviar a edit.php pero pasando el dato de id de bd mediante php para ubicar datos en edit.php-->
                                                         <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">
-                                                            <img src="images/edit.png" height="28">
+                                                            <img src="../includes/images/edit.png" height="28">
                                                         </a>
                                                         <a href="delete_task.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">
                                                             <!--enviar a edit.php pero pasando el dato de id de bd mediante php para ubicar datos en edit.php-->
-                                                            <img src="images/delete.png" height="28">
+                                                            <img src="../includes/images/delete.png" height="28">
                                                         </a>
                                                     </td> <!-- TD BOTONES edit and delete -->
                                                 </tr>
@@ -115,7 +111,7 @@
                             <!--col-sm-12-->
                         </div> <!-- form-row-->
                     </div> <!-- class="form-group" CONTENEDOR BUSQUEDA -->
-
+<!--
                     <script type="text/javascript">
                         $(document).ready(function() {
                             $('#buscar').click(function() {
@@ -126,7 +122,7 @@
                             }); //.click(funtion)
                         }); //.ready(function)
                     </script>
-
+                    -->
                 </div>
                 <!--col-sm-12-->
             </div>

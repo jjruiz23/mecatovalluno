@@ -15,6 +15,7 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="crearPer.php">Crear</a></li>
                 <li><a class="dropdown-item" href="buscPer.php">Buscar</a></li>
+                <li><a class="dropdown-item" href="consoPer.php">Consolidado</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">

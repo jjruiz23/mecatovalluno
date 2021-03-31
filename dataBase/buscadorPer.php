@@ -3,8 +3,8 @@
 require_once "conexion.php";    //importo los parametros de conexion en conexion.php
 $conexion=conexion();   // creo variable $conexion y alamaceno los valores retornados por la funcion conexion importada por conexion.php
 
-if(!isset($_GET['buscador'])){  // si el valor no esta definido
-    $_GET['buscador']='';    // dejer la variable en blanco
+if(!isset($_POST['buscador'])){  // si el valor no esta definido
+    $_POST['buscador']='';    // dejer la variable en blanco
 
    //$buscador=$_POST['buscador']; // prueba de fucnionamiento
 
@@ -12,8 +12,8 @@ if(!isset($_GET['buscador'])){  // si el valor no esta definido
 
 var_dump($_POST["buscador"]?? '');
 //$buscador = $_POST['buscador'];  //capturar variable enviada al 
-var_dump($_GET['buscador']);
-$buscador = $_GET['buscador'];  //capturar variable enviada al modulo
+//var_dump($_GET['buscador']);
+$buscador = $_POST['buscador'];  //capturar variable enviada al modulo
 // query 
 $sql="SELECT * 
         FROM estudiantes 

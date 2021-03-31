@@ -14,14 +14,13 @@
     <div class="row-justify"> <!-- distribuidor de columnas/filas -->
       <div class="col-sm-12 col-xs-12"> <!-- tamaños de distribucion de columnas/filas -->
 
+      <!-- card con informacion del modulo -->
       <div class="card text-center">
 
-        <!-- card con informacion del modulo -->
-        <div class="card-body card-text-left">
-          <h5 class="card-title">Menu Principal</h5>
-          <p class="card-text">Te permite navegar por los diferentes modulos del sistema para administrar la informacion</p>
-          <!--     <a href="#" class="btn btn-primary">Go somewhere</a>   -->
+        <div id="cnt-info" class="alert-alert-info">
+
         </div>
+      
       </div>
 
     </div>   <!--col-sm-12-->
@@ -33,3 +32,8 @@
 
 <!-- solicito el footer -->
 <?php include("../includes/footer.php") ?>
+
+<!-- solicito las funciones del modulo cargadas en el footer desde js -->
+<script>
+  $(document).ready(accionesAdminSis);
+</script>

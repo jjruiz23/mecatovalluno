@@ -13,7 +13,7 @@
 <!-- CONTENIDO DEL MODULO -->
 
 <!--container formulario-->
-<div class="container"> <!-- contendor de columnas/filas -->
+<div class="container" id="cnt-info"> <!-- contendor de columnas/filas -->
     <div class="row-justify"> <!-- distribuidor de columnas/filas -->
       <div class="col-sm-12 col-xs-12"> <!-- tamaños de distribucion de columnas/filas -->
         
@@ -144,3 +144,8 @@
 
 <!-- solicito el footer -->
 <?php include("../includes/footer.php") ?>
+
+<!-- solicito las funciones del modulo cargadas en el footer desde js -->
+<script>
+  $(document).ready(accionesAdminSis);
+</script>

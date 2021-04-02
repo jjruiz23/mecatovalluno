@@ -27,7 +27,7 @@
                         <div class="col-sm">
                         </div>
                         <div class="col-sm-4 col-md-4 col-xs-4">
-                            <form action="../adminSis/buscPerResul.php" method="post" id="respuesta">
+                            <form action="../adminSis/buscPerResul.php" method="get" id="respuesta">
                                 <!-- recargo pagina con el resultado del query -->
                                 <input type="text" style="text-align:center" name="buscador" id="buscador" placeholder="Ingrese ID"> <!-- input captura de datos-->
                                 <button type="submit" class="btn btn-success" id="buscar"> Buscar </button> <!-- boton para activar formulario -->
@@ -36,30 +36,16 @@
                     </div>
                     <p></p> <!-- espacio entre botones superiores y contenedor de resultado -->
 
-                </div>
-                <!--col-sm-12-->
-            </div>
-            <!--row-->
-        </div>
-        <!--container mayor-->
+                </div>    <!--card header-->
+            </div>    <!--card-->
+        </div>  <!--col-sm-12-->
+    </div>  <!--row-->
+</div><!--container MAYOR-->
 
         <!-- XXXX -->
         <p></p>
 
-    </div> <!--  fin card-body-->
-</div> <!-- fin card -->
-
-</form>
-
-</div>
-<!--col-sm-12-->
-</div>
-<!--row-->
-</div>
-<!--container MAYOR-->
-
-
-<!-- fin body de la pagina -->
+<!-- fin body de la pagina 
 
 <script type="text/javascript">  // creo el script de tipo texto
 	$(document).ready(function(){  // cargo la funcion
@@ -73,16 +59,11 @@
     }); //.ready(function)
 </script>
 
-<script>
-    cadena = 'buscador';
+-->
+<!--cargo scrip de funciones js para llamar funciones y acciones en cada modulo-->
+<script src="../js/funciones.js"></script>
 
-    $.ajax({
-    type: "post",
-    url: "buscPerResul.php",
-    data: cadena,
-    success: function() {
-      //display message back to user here
-        }
-    });
-  //return false;
+<!-- solicito las funciones del modulo cargadas en el footer desde js -->
+<script>
+  $(document).ready(accionesAdminSis);
 </script>

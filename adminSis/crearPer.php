@@ -21,7 +21,7 @@
       <div class="card">
         <h5 class="card-header">Personal</h5> <!--titulo -->
         <div class="card-body">
-          <a href="buscPer.php" class="btn btn-outline-success">Buscar</a> <!--boton -->
+          <a href="buscPerResul.php" class="btn btn-outline-success" >Buscar</a> <!--boton -->
           <a href="consoPer.php" class="btn btn-outline-success">Consolidado</a> <!--boton -->
           <p></p>
           <h5 class="card-title">Registrar Nuevo</h5>

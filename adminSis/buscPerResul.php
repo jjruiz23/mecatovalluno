@@ -18,12 +18,9 @@
 <!-- CONTENIDO DEL MODULO -->
 
 <!--container botones y formulario de busqueda-->
-<div class="container">
-    <!-- contendor de columnas/filas -->
-    <div class="row-justify">
-        <!-- distribuidor de columnas/filas -->
-        <div class="col-sm-12 col-xs-12">
-            <!-- tamaños de distribucion de columnas/filas -->
+<div class="container">   <!-- contendor de columnas/filas -->
+    <div class="row-justify">   <!-- distribuidor de columnas/filas -->
+        <div class="col-sm-12 col-xs-12">      <!-- tamaños de distribucion de columnas/filas -->
 
             <!-- card con informacion del modulo -->
             <div class="card">
@@ -41,7 +38,7 @@
                         <div class="col-sm">
                         </div>
                         <div class="col-sm-4 col-md-4 col-xs-4">
-                            <form action="../adminSis/buscPer2.php" method="post" id="respuesta">
+                            <form action="../adminSis/buscPerResul.php" method="post" id="respuesta">
                                 <!-- recargo pagina con el resultado del query -->
                                 <input type="text" style="text-align:center" name="buscador" id="buscador" placeholder="Ingrese ID"> <!-- input captura de datos-->
                                 <button type="submit" class="btn btn-success" id="buscar"> Buscar </button> <!-- boton para activar formulario -->
@@ -121,10 +118,8 @@
                             <!--col-sm-12-->
                         </div> <!-- form-row-->
                     </div> <!-- class="form-group" CONTENEDOR BUSQUEDA -->
-                </div>
-                <!--col-sm-12-->
-            </div>
-            <!--row-->
+                </div>   <!--col-sm-12-->
+            </div> <!--row-->
         </div>
         <!--container mayor-->
 

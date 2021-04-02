@@ -30,7 +30,7 @@
             <h5 class="card-header">Consolidado Personal</h5> <!--titulo -->
         <div class="card-body">
           <a href="crearPer.php" class="btn btn-outline-success">Crear</a> <!--boton -->
-          <a href="buscPer.php" class="btn btn-outline-success">Buscar</a> <!--boton -->
+          <a href="buscPerResul.php" class="btn btn-outline-success">Buscar</a> <!--boton -->
 
           <p></p>
           <h5 class="card-title">Consolidado General de Personal</h5>

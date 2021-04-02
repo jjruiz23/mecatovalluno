@@ -23,9 +23,9 @@
   ?>
 
   <!-- Header -->
-  <div class="container"> <!-- contendor de columnas/filas -->
-    <div class="row-justify"> <!-- distribuidor de columnas/filas -->
-      <div class="col-sm-12 col-xs-12"> <!-- tamaños de distribucion de columnas/filas -->
+  <div class="container">    <!-- contendor de columnas/filas -->
+    <div class="row-justify">   <!-- distribuidor de columnas/filas -->
+      <div class="col-sm-12 col-xs-12">   <!-- tamaños de distribucion de columnas/filas -->
 
         <nav class="navbar navbar-dark bg-dark">
           <div class="container-fluid">
@@ -38,27 +38,23 @@
                   <a class="nav-link active fw-italic" href="www.google.com.co">MECATO VALLUNO</a>
                 </li>
               </ul> -->
-            <span class="text-dark">  <!-- Boton de usuario y salir -->
-            <li class="nav-item dropdown">
-              <a class="btn btn-outline-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                <?php echo $user." / ". $rol ?> ▼
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Salir</a></li>
-              </ul>
-            </li>
+            <span class="text-dark">
+              <!-- Boton de usuario y salir -->
+              <li class="nav-item dropdown">
+                <a class="btn btn-outline-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <?php echo $user . " / " . $rol ?> ▼
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Salir</a></li>
+                </ul>
+              </li>
             </span>
           </div>
+        </nav>
 
-      </div>
-      </nav>
-
-    </div>
-    <!--col-sm-12-->
-  </div>
-  <!--row-->
-  </div>
-  <!--container MAYOR-->
+      </div> <!--col-sm-12-->
+    </div> <!--row-->
+  </div> <!--container MAYOR-->
 
   <p></p> <!-- Espacio inicial -->
 

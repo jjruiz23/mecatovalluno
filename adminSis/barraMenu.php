@@ -7,7 +7,7 @@
 
         <!--  Barra de botones de navegacion -->
         <nav class="navbar navbar-dark bg-dark">
-          <form class="container-fluid justify-content-center">
+          <form id="frmMenu" class="container-fluid justify-content-center">
             <li class="nav-item dropdown">
               <a class="btn btn-outline-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Personal
@@ -23,7 +23,7 @@
                 Cliente
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Crear</a></li>
+                <li><a class="dropdown-item" href="menuPpl1.php">Crear</a></li>
                 <li><a class="dropdown-item" href="#">Buscar</a></li>
               </ul>
             </li>
@@ -46,6 +46,7 @@
                 <li><a class="dropdown-item" href="#">Crear Sede</a></li>
               </ul>
             </li>
+          </form>
         </nav>
 
       </div> <!-- fin de card y menu -->

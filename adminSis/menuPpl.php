@@ -10,7 +10,7 @@
 
 <!-- CONTENIDO DEL MODULO -->
 
-<div class="container"> <!-- contendor de columnas/filas -->
+<div class="container" id="cnt-info"> <!-- contendor de columnas/filas -->
     <div class="row-justify"> <!-- distribuidor de columnas/filas -->
       <div class="col-sm-12 col-xs-12"> <!-- tamaños de distribucion de columnas/filas -->
 

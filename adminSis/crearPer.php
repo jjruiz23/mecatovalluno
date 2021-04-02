@@ -16,23 +16,24 @@
 <div class="container" id="cnt-info"> <!-- contendor de columnas/filas -->
     <div class="row-justify"> <!-- distribuidor de columnas/filas -->
       <div class="col-sm-12 col-xs-12"> <!-- tamaños de distribucion de columnas/filas -->
-        
+
       <!-- card con informacion del modulo -->
       <div class="card">
         <h5 class="card-header">Personal</h5> <!--titulo -->
         <div class="card-body">
+        <form id="frmRegistro">
+
           <a href="buscPerResul.php" class="btn btn-outline-success" >Buscar</a> <!--boton -->
           <a href="consoPer.php" class="btn btn-outline-success">Consolidado</a> <!--boton -->
           <p></p>
           <h5 class="card-title">Registrar Nuevo</h5>
           <!-- Primer fila de inputs -->
-          <form class="form-inline" action="/action_page.php">
           <div class="row g-3">   
             <div class="col-sm-4">
-              <input type="text" class="form-control" placeholder="Nombres" aria-label="State">
+              <input type="text" class="form-control" id="nombres" placeholder="Nombres" value="" required>
             </div>
             <div class="col-sm-4">
-              <input type="text" class="form-control" placeholder="Correo Electronico" aria-label="Zip">
+              <input type="text" class="form-control" id="email" placeholder="Correo Electronico" value="" required>
             </div>
               <div class="col-sm">
             </div>
@@ -41,7 +42,7 @@
           <!-- Segunda fila de inputs -->
           <div class="row g-3">   
             <div class="col-sm-4">
-              <input type="text" class="form-control" placeholder="Apellidos" aria-label="State">
+              <input type="text" class="form-control" id="apellidos" placeholder="Apellidos" value="" required>
             </div>
             <div class="col-sm-4">
               <div class="row g-2">
@@ -84,7 +85,7 @@
           <!-- Cuarta fila de inputs -->
           <div class="row g-3">   
             <div class="col-sm-4">
-              <input type="text" class="form-control" placeholder="Numero Celular" aria-label="State">
+              <input type="text" class="form-control" id="celular" placeholder="Numero Celular" value="" required>
             </div>
             <div class="col-sm-4">
             <select class="form-select" name="tipodoc" id="tipodoc">  <!-- select que captura los option value -->
@@ -101,7 +102,7 @@
           <!-- Quinta fila de inputs -->
           <div class="row g-3">   
             <div class="col-sm-4">
-              <input type="text" class="form-control" placeholder="Numero telefono" aria-label="State">
+              <input type="text" class="form-control" id="telefono" placeholder="Numero telefono" value="" required>
             </div>
             <div class="col-sm-4">
             <select class="form-select" name="tipodoc" id="tipodoc">  <!-- select que captura los option value -->
@@ -118,7 +119,7 @@
           <!-- Sexta fila de inputs -->
           <div class="row g-3">   
             <div class="col-sm-4">
-              <input type="text" class="form-control" placeholder="Direccion" aria-label="State">
+              <input type="text" class="form-control" id="direccion" placeholder="Direccion" value="" required>
             </div>
             <div class="col-sm">
             </div>
@@ -129,11 +130,10 @@
           <!-- botones formulario -->
           <p></p>
           <a href="#" class="btn btn-success">Añadir Nuevo</a>
-          <a href="#" class="btn btn-danger">Borrar campos</a>
-        </div>
-      </div>
-
-      </form>
+          <a type="#" id="borrarCampos" class="btn btn-danger">Borrar campos</a>
+          </form>
+        </div>  <!--card-body-->
+      </div>  <!--card-->    
 
     </div>   <!--col-sm-12-->
   </div> <!--row-->
@@ -148,4 +148,13 @@
 <!-- solicito las funciones del modulo cargadas en el footer desde js -->
 <script>
   $(document).ready(accionesAdminSis);
+  /*$(document).ready(function(){
+    console.log("carfo funcion");
+    $("#borrarCampos").click(function(){
+      console.log("carfo click");
+      alertify.alert("<b>Datos borrados</b> Ingresar informacion de nuevo").setHeader('<b> Cuidado! </b></em> ');  // mensaje de alerta indicando que el campo esta vacio
+      $("#frmRegistro")[0].reset();
+    })
+  });*/
 </script>
+

@@ -1,6 +1,7 @@
 <!-- incluir conexion a base de datos -->
-<?php include("../dataBase/conexion.php")?>
-<?php $conexion=conexion();?> <!-- invoco funcion conexion y la almaceno para usar en query -->
+<?php include("../dataBase/conexion.php") ?>
+<?php $conexion = conexion(); ?>
+<!-- invoco funcion conexion y la almaceno para usar en query -->
 
 <!-- solicito el header -->
 <?php include("../includes/header.php") ?>
@@ -18,9 +19,9 @@
 <!-- CONTENIDO DEL MODULO -->
 
 <!--container botones y formulario de busqueda-->
-<div class="container">   <!-- contendor de columnas/filas -->
-    <div class="row-justify">   <!-- distribuidor de columnas/filas -->
-        <div class="col-sm-12 col-xs-12">      <!-- tamaños de distribucion de columnas/filas -->
+<div class="container">    <!-- contendor de columnas/filas -->
+    <div class="row-justify">    <!-- distribuidor de columnas/filas -->
+        <div class="col-sm-12 col-xs-12">  <!-- tamaños de distribucion de columnas/filas -->
 
             <!-- card con informacion del modulo -->
             <div class="card">
@@ -38,7 +39,7 @@
                         <div class="col-sm">
                         </div>
                         <div class="col-sm-4 col-md-4 col-xs-4">
-                            <form action="../adminSis/buscPerResul.php" method="post" id="respuesta">
+                            <form action="../adminSis/buscPerResul.php" method="GET" id="respuesta">
                                 <!-- recargo pagina con el resultado del query -->
                                 <input type="text" style="text-align:center" name="buscador" id="buscador" placeholder="Ingrese ID"> <!-- input captura de datos-->
                                 <button type="submit" class="btn btn-success" id="buscar"> Buscar </button> <!-- boton para activar formulario -->
@@ -114,31 +115,19 @@
                                     ?>
 
                                 </div> <!--  row -->
-                            </div>
-                            <!--col-sm-12-->
+                            </div>  <!--col-sm-12-->
                         </div> <!-- form-row-->
                     </div> <!-- class="form-group" CONTENEDOR BUSQUEDA -->
-                </div>   <!--col-sm-12-->
-            </div> <!--row-->
-        </div>
-        <!--container mayor-->
+                </div>  <!--card body-->
+            </div>   <!--card-->
+        </div> <!--col-sm-12-->
+    </div> <!--row-->
+</div> <!--container mayor-->
 
-        <!-- XXXX -->
-        <p></p>
+<!-- XXXX -->
+<p></p>
 
 <!-- fin body de la pagina -->
 
-<!-- solicito el footer -->
+<!-- solicito el footer 
 <?php include("../includes/footer.php") ?>
-
-<script type="text/javascript">  // creo el script de tipo texto
-	$(document).ready(function(){  // cargo la funcion
-        $('#buscar').click(function(){  // asigno evento a funcion click del boton Entrar utilizando #
-            if ($('#buscador').val() == "") {   // si el input usuario esta vacio
-                console.log("cargo la funcion");
-				alertify.alert("<b>Debes ingresar el ID</b> Campo en blanco").setHeader('<b> Cuidado! </b>');  // mensaje de alerta indicando que el campo esta vacio
-                return false;   //para que el mensaje no se cierre automaticamente
-            }
-        }); //.click(funtion)
-    }); //.ready(function)
-</script>

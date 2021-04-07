@@ -129,5 +129,10 @@
 
 <!-- fin body de la pagina -->
 
-<!-- solicito el footer 
+<!-- solicito el footer -->
 <?php include("../includes/footer.php") ?>
+
+<!-- solicito las funciones del modulo cargadas en el footer desde js -->
+<script>
+    $(document).ready(accionesAdminSis);
+</script>

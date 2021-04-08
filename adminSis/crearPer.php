@@ -109,7 +109,7 @@
                 <option value="" selected="Elegir...">Salarios ... </option>
                 <option value=1000000>1.000.000</option>
                 <option value=1500000>1.500.000</option>
-                <option value=2000000>2.200.000</option>
+                <option value=2200000>2.200.000</option>
               </select>
             </div>
               <div class="col-sm">

@@ -84,15 +84,28 @@ function accionesAdminSis(){      // se crea funcion de js
                 alertify.alert("Este personal ya existe, Prueba con otro").setHeader('<em> Titulo </em> ');
                 //return false;
             }
+            else{
+                $('#frmRegistro')[0].reset();
+                alertify.success("Agregado con exito");
+                //return false;
+            }
+            // recepcion de respuesta no funciona correctamente
+            //if
+            /*
+                        if(r==2){
+                alertify.alert("Este personal ya existe, Prueba con otro").setHeader('<em> Titulo </em> ');
+                //return false;
+            }
             else if(r==1){
                 $('#frmRegistro')[0].reset();
-                alertify.alert("Agregado con exito").setHeader('<em> Titulo </em> ');
+                alertify.success("Agregado con exito");
                 //return false;
             }
             else{
                 alertify.error("Fallo al agregar");
                 //return false;
             }       //if
+            */
         }   //success function
     }); //ajax
 

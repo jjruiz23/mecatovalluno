@@ -8,6 +8,7 @@
 		$apellidos=$_POST['apellidos'];  // creo variable $nombre y le asigno los datos recibidos desde regisEst.php
 		$fechanac=$_POST['fechanac'];
 		$tipodoc=$_POST['tipodoc'];
+		$numdocumento=$_POST['numdocumento'];
 		$estcivil=$_POST['estcivil'];
 		$celular=$_POST['celular'];
 		$sede=$_POST['sede'];
@@ -16,14 +17,14 @@
         $direccion=$_POST['direccion'];
 
 	// de buscaRepetido se responde a regisEst.php mediante el echo
-		if(buscaRepetido($tipodoc,$nombres,$conexion)==1){  // si el resultado de la funcion es igual a 1
+		if(buscaRepetido($tipodoc,$numdocumento,$apellidos,$conexion)==1){  // si el resultado de la funcion es igual a 1
 			echo 2; // imprimir un 2  y devuevlo a registro.php a r  en  susses:funtion(r)
 		}else{
             // realizar inserccion de datos a la base de datos
             // insertar en la tabla personal en los campos (*,*,*,*)
             //los valores de las variables ('*','*','*','*')
-			$sql="INSERT into personal (nombres,apellidos,email,fechaNac,tipoDoc,estCivil,celular,sede,telefono,salarios,direccion)
-				values ('$nombres','$apellidos','$email','$fechanac','$tipodoc','$estcivil','$celular','$sede','$telefono','$salario','$direccion')";
+			$sql="INSERT into personal (nombres,apellidos,email,fechaNac,tipoDoc,numDocumento,estCivil,celular,sede,telefono,salarios,direccion)
+				values ('$nombres','$apellidos','$email','$fechanac','$tipodoc','$numdocumento','$estcivil','$celular','$sede','$telefono','$salario','$direccion')";
 			$result=mysqli_query($conexion,$sql); ////la funcion mysqli_query devulve un valor mayor a 0 si encuentra resultado de $sql en $conexion
 
 		}
@@ -34,13 +35,12 @@
 			echo 0;
 		}
 		*/
-
         
 		// creo funcion buscaRepetido y le paso los datos de las variables creadas (tipo de documento, numero de documento y conexion)
-		function buscaRepetido($tipo,$ndc,$conexion){  
+		function buscaRepetido($tipo,$numdocu,$ape,$conexion){  
             // creo la variable $sql
 	        //selecciono todo en la tabla usuarios donde las variables $ creadas deben ser iguals a los campos de la tabla (campo='$variable')			
-			$sql="SELECT * from personal where tipoDoc='$tipo' and nombres='$ndc'"; 
+			$sql="SELECT * from personal where tipoDoc='$tipo' and numDocumento='$numdocu' and apellidos='$ape'"; 
 	        //creo la variable $result y le paso los datos de la conexion y sql
 			$result=mysqli_query($conexion,$sql); ////la funcion mysqli_query devulve un valor mayor a 0 si encuentra resultado de $sql en $conexion
 			if(mysqli_num_rows($result) > 0){  // si el resultado de las filas es mayor a 0 en la variable $result

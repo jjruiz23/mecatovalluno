@@ -22,42 +22,45 @@ function accionesAdminSis(){      // se crea funcion de js
         $("#frmRegistro")[0].reset();
       });
 
-    // 
+    // control de no inputs en blanco
     $('#registrarNuevo').click(function(){  // primer fila de inputs
         console.log("cargo accion validar datos en blanco form");
-        if($('#nombres').val()==""){
-          alertify.alert("Debes Digitar Nombre(s)").setHeader('<em> Alerta </em>');
-          return false;
-        }else if($('#email').val()==""){
-          alertify.alert("Debes Digitar Correo Electronico").setHeader('<em> Alerta </em>');
-          return false;
-        }else if($('#apellidos').val()==""){  // segunda fila de inputs
-          alertify.alert("Debes Digitar Apellido(s)").setHeader('<em> Alerta </em>');
-          return false;
-        }else if($('#fechanac').val()==""){
-          alertify.alert("Debes elegir una fecha de nacimiento").setHeader('<em> Alerta </em>');
-          return false;
-        }else if($('#tipodoc').val().trim() === ''){  // tercera fila de inputs
+        if($('#tipodoc').val().trim() === ''){  // primera fila de inputs
           alertify.alert("Debes Elegir tipo de documento").setHeader('<em> Alerta </em>');
           return false;
-        }else if($('#estcivil').val().trim() === ''){
-          alertify.alert("Debes Elegir Estado Civil").setHeader('<em> Alerta </em>');
+        }else if($('#numdocumento').val()==""){
+          alertify.alert("Debes Digitar Numero de documento").setHeader('<em> Alerta </em>');
           return false;
-        }else if($('#celular').val()==""){  // cuarta fila de inputs
+        }else if($('#nombres').val()==""){  // segunda fila de inputs
+          alertify.alert("Debes Digitar Nombre(s)").setHeader('<em> Alerta </em>');
+          return false;
+        }else if($('#apellidos').val()==""){
+          alertify.alert("Debes Digitar Apellido(s)").setHeader('<em> Alerta </em>');
+          return false;
+        }else if($('#celular').val()==""){  // tercera fila de inputs
           alertify.alert("Debes Digitar Numero Celular").setHeader('<em> Alerta </em>');
           return false;
-        }else if($('#sede').val().trim() === ''){
-          alertify.alert("Debes Elegir sede").setHeader('<em> Alerta </em>');
-          return false;
-        }else if($('#telefono').val()==""){   // quinta fila de inputs
+        }else if($('#telefono').val()==""){
           alertify.alert("Debes Digitar telefono").setHeader('<em> Alerta </em>');
-          return false; 
+          return false;
+        }else if($('#direccion').val()==""){    //cuarta fila de inputs
+          alertify.alert("Debes Digitar direccion").setHeader('<em> Alerta </em>');
+          return false;     
+        }else if($('#email').val()==""){  
+          alertify.alert("Debes Digitar Correo Electronico").setHeader('<em> Alerta </em>');
+          return false;        
+        }else if($('#fechanac').val()==""){   // quinta fila de inputs
+          alertify.alert("Debes elegir una fecha de nacimiento").setHeader('<em> Alerta </em>');
+          return false;        
+        }else if($('#estcivil').val().trim() === ''){
+          alertify.alert("Debes Elegir Estado Civil").setHeader('<em> Alerta </em>');
+          return false;        
+        }else if($('#sede').val().trim() === ''){ // sexta fila de inputs
+          alertify.alert("Debes Elegir sede").setHeader('<em> Alerta </em>');
+          return false;        
         }else if($('#salarios').val().trim() === ''){
           alertify.alert("Debes Elegir Salario").setHeader('<em> Alerta </em>');
-          return false;
-        }else if($('#direccion').val()==""){    // sexta fila de inputs
-          alertify.alert("Debes Digitar direccion").setHeader('<em> Alerta </em>');
-          return false;
+          return false;        
         }
 
         // crear paquete de datos para pasar al ajax
@@ -67,6 +70,7 @@ function accionesAdminSis(){      // se crea funcion de js
                 "&apellidos=" + $('#apellidos').val() +
                 "&fechanac=" + $('#fechanac').val() +
                 "&tipodoc=" + $('#tipodoc').val() +
+                "&numdocumento=" + $('#numdocumento').val() +
                 "&estcivil=" + $('#estcivil').val() +
                 "&celular=" + $('#celular').val() +
                 "&sede=" + $('#sede').val() +

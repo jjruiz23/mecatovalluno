@@ -30,45 +30,59 @@
           <!-- Primer fila de inputs -->
           <div class="row g-3">   
             <div class="col-sm-4">
-              <input type="text" class="form-control" id="nombres" placeholder="Nombres" value="" required autofocus>
+              <select class="form-select" name="tipodoc" id="tipodoc" autofocus>  <!-- select que captura los option value -->
+                <option value="" selected="Elegir...">Tipo Documento &nbsp ... </option>
+                <option value="CEDULA C">Cedula C</option>
+                <option value="CEDULA">Cedula Extranjeria</option>
+                <option value="PASAPORTE">Pasaporte</option>
+              </select>
             </div>
             <div class="col-sm-4">
-              <input type="text" class="form-control" id="email" placeholder="Correo Electronico" value="" required>
-            </div>
-              <div class="col-sm">
+              <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="numdocumento" placeholder="Numero Documento" value="" required>
             </div>
           </div>
           <p></p>
-          <!-- Segunda fila de inputs -->
+          <!-- Segunda fila de inputs -->          
           <div class="row g-3">   
             <div class="col-sm-4">
-              <input type="text" class="form-control" id="apellidos" placeholder="Apellidos" value="" required>
+              <input type="text" class="form-control" id="nombres" placeholder="Nombres" value="" required>
             </div>
             <div class="col-sm-4">
-              <div class="row g-2">
-                <div class="col-sm-4">
-                  fecha Nacimiento
-                </div>
-                <div class="col-sm-8">
-                <input type="date" class="form-control" id="fechanac" step="1" min="1960-01-01" max="2021-12-31">
-                </div>
-              </div>
-               
-
-            </div>
-              <div class="col-sm">
+              <input type="text" class="form-control" id="apellidos" placeholder="Apellidos" value="" required>
             </div>
           </div>
           <p></p>
           <!-- Tercera fila de inputs -->
           <div class="row g-3">   
             <div class="col-sm-4">
-              <select class="form-select" name="tipodoc" id="tipodoc">  <!-- select que captura los option value -->
-                <option value="" selected="Elegir...">Tipo Documento &nbsp ... </option>
-                <option value="CEDULA C">Cedula C</option>
-                <option value="CEDULA">Cedula Extranjeria</option>
-                <option value="PASAPORTE">Pasaporte</option>
-              </select>
+              <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="celular" placeholder="Numero Celular" value="" required>
+            </div>
+            <div class="col-sm-4">
+              <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="telefono" placeholder="Numero telefono" value="" required>
+            </div>
+          </div>
+          <p></p>
+          <!-- Cuarta fila de inputs -->
+          <div class="row g-3">
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="direccion" placeholder="Direccion" value="" required>
+            </div> 
+            <div class="col-sm-4">
+              <input type="email" name="email" class="form-control" id="email" placeholder="Correo Electronico   ejemplo@hotmail.com" value="<?php echo "@",".";?>" required>
+            </div>                                     
+          </div>
+          <p></p>          
+          <!-- Quinta fila de inputs -->
+          <div class="row g-3">   
+            <div class="col-sm-4">
+              <div class="row g-2">
+                <div class="col-sm-4">
+                  fecha Nacimiento
+                </div>
+                <div class="col-sm-8">
+                <input type="date" class="form-control" id="fechanac" step="1" min="1960-01-01" max="2002-12-31">
+                </div>
+              </div>     
             </div>
             <div class="col-sm-4">
             <select class="form-select" name="estcivil" id="estcivil">  <!-- select que captura los option value -->
@@ -77,56 +91,29 @@
                 <option value="CASADO">Casado</option>
                 <option value="VIUDO">Viudo</option>
               </select>
-            </div>
-              <div class="col-sm">
-            </div>
+            </div>              
           </div>
           <p></p>
-          <!-- Cuarta fila de inputs -->
+          <!-- Sexta fila de inputs -->
           <div class="row g-3">   
             <div class="col-sm-4">
-              <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="celular" placeholder="Numero Celular" value="" required>
-            </div>
-            <div class="col-sm-4">
-            <select class="form-select" name="sede" id="sede">  <!-- select que captura los option value -->
+              <select class="form-select" name="sede" id="sede">  <!-- select que captura los option value -->
                 <option value="" selected="Elegir...">Sede ... </option>
                 <option value="CALI">Cali</option>
                 <option value="MEDELLIN">Medellin</option>
                 <option value="BOGOTA">Bogota</option>
               </select>
             </div>
-              <div class="col-sm">
-            </div>
-          </div>
-          <p></p>
-          <!-- Quinta fila de inputs -->
-          <div class="row g-3">   
-            <div class="col-sm-4">
-              <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="telefono" placeholder="Numero telefono" value="" required>
-            </div>
             <div class="col-sm-4">
             <select class="form-select" name="salarios" id="salarios">  <!-- select que captura los option value -->
-                <option value="" selected="Elegir...">Salarios ... </option>
+                <option value="" selected="Elegir...">Salario ... </option>
                 <option value=1000000>1.000.000</option>
                 <option value=1500000>1.500.000</option>
                 <option value=2200000>2.200.000</option>
               </select>
             </div>
-              <div class="col-sm">
-            </div>
           </div>
           <p></p>
-          <!-- Sexta fila de inputs -->
-          <div class="row g-3">   
-            <div class="col-sm-4">
-              <input type="text" class="form-control" id="direccion" placeholder="Direccion" value="" required>
-            </div>
-            <div class="col-sm">
-            </div>
-              <div class="col-sm">
-            </div>
-          </div>      
-          
           <!-- botones formulario -->
           <p></p>
           <a href="#" id="registrarNuevo" class="btn btn-success">Añadir Nuevo</a>
@@ -149,45 +136,3 @@
 <script>
   $(document).ready(accionesAdminSis);
 </script>
-<!--
-<script type="text/javascript">
-$(document).ready(function(){
-  $('#registrarNuevo').click(function(){  // primer fila de inputs
-    if($('#nombres').val()==""){
-      alertify.alert("Debes Digitar Nombre(s)").setHeader('<em> Alerta </em>');
-      return false;
-    }else if($('#email').val()==""){
-      alertify.alert("Debes Digitar Correo Electronico").setHeader('<em> Alerta </em>');
-      return false;
-    }else if($('#apellidos').val()==""){  // segunda fila de inputs
-      alertify.alert("Debes Digitar Apellido(s)").setHeader('<em> Alerta </em>');
-      return false;
-    }else if($('#fechanac').val()==""){
-      alertify.alert("Debes elegir una fecha de nacimiento").setHeader('<em> Alerta </em>');
-      return false;
-    }else if($('#tipodoc').val().trim() === ''){  // tercera fila de inputs
-      alertify.alert("Debes Elegir tipo de documento").setHeader('<em> Alerta </em>');
-      return false;
-    }else if($('#estcivil').val().trim() === ''){
-      alertify.alert("Debes Elegir Estado Civil").setHeader('<em> Alerta </em>');
-      return false;
-    }else if($('#celular').val()==""){  // cuarta fila de inputs
-      alertify.alert("Debes Digitar Numero Celular").setHeader('<em> Alerta </em>');
-      return false;
-    }else if($('#sede').val().trim() === ''){
-      alertify.alert("Debes Elegir sede").setHeader('<em> Alerta </em>');
-      return false;
-    }else if($('#telefono').val()==""){   // quinta fila de inputs
-      alertify.alert("Debes Digitar telefono").setHeader('<em> Alerta </em>');
-      return false; 
-    }else if($('#salarios').val().trim() === ''){
-      alertify.alert("Debes Elegir Salario").setHeader('<em> Alerta </em>');
-      return false;
-    }else if($('#direccion').val()==""){    // sexta fila de inputs
-      alertify.alert("Debes Digitar direccion").setHeader('<em> Alerta </em>');
-      return false;
-    }
-  });
-});
-</script>
--->

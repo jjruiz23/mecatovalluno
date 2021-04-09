@@ -41,9 +41,9 @@
                 Gestion Tiendas
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Crear Pais</a></li>
-                <li><a class="dropdown-item" href="#">Crear Ciudad</a></li>
-                <li><a class="dropdown-item" href="#">Crear Sede</a></li>
+                <li><a class="dropdown-item" href="crearPais.php">Crear Pais</a></li>
+                <li><a class="dropdown-item" href="crearCiudad.php">Crear Ciudad</a></li>
+                <li><a class="dropdown-item" href="crearSede.php">Crear Sede</a></li>
               </ul>
             </li>
           </form>

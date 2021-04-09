@@ -68,7 +68,7 @@
               <input type="text" class="form-control" id="direccion" placeholder="Direccion" value="" required>
             </div> 
             <div class="col-sm-4">
-              <input type="email" name="email" class="form-control" id="email" placeholder="Correo Electronico   ejemplo@hotmail.com" value="<?php echo "@",".";?>" required>
+              <input type="email" name="email" class="form-control" id="email" placeholder="Correo Electronico   ejemplo@hotmail.com" value="" required>
             </div>                                     
           </div>
           <p></p>          

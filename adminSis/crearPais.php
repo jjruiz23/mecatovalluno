@@ -30,13 +30,13 @@
           <!-- Primer fila de inputs -->
           <div class="row g-3">   
             <div class="col-sm-4">
-              <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="numdocumento" placeholder="Numero Documento" value="" required>
+              <input type="text" class="form-control" id="nuevoPais" placeholder="Digita Nuevo Pais" value="" required autofocus>
             </div>
           </div>
           <p></p>
           <!-- botones formulario -->
           <p></p>
-          <a href="#" id="registrarNuevo" class="btn btn-success">Añadir Nuevo</a>
+          <a href="#" id="registrarPais" class="btn btn-success">Añadir Nuevo</a>
           <a type="#" id="borrarCampos" class="btn btn-danger">Borrar campos</a>
           </form>
         </div>  <!--card-body-->

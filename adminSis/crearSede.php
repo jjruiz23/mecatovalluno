@@ -30,21 +30,25 @@
           <!-- Primer fila de inputs -->
           <div class="row g-3">   
             <div class="col-sm-4">
-              <select class="form-select" name="tipodoc" id="tipodoc" autofocus>  <!-- select que captura los option value -->
-                <option value="" selected="Elegir...">Elija Ciudad &nbsp ... </option>
-                <option value="CEDULA C">Cedula C</option>
-                <option value="CEDULA">Cedula Extranjeria</option>
-                <option value="PASAPORTE">Pasaporte</option>
-              </select>
+              <!-- solicito la conexion y el query para mostrar datos de tabla en select -->
+              <?php include '../dataBase/adminSis/selects.php';  
+                 if ($resultadoCiudad): ?>
+                <select class="form-select" name="idCiudad" id="idCiudad" autofocus>  <!-- select que captura los option value -->
+                  <option value="" selected="Elegir...">Elija Ciudad &nbsp ... </option>                  
+                  <?php while ($rowy = mysqli_fetch_array($resultadoCiudad)): ?>
+	                  <option value ="<?php echo $rowy[0] ?>"><?php echo $rowy[1] ?></option>
+	                <?php endwhile; ?>
+                </select>
+              <?php endif ?>
             </div>
             <div class="col-sm-4">
-              <input type="text" class="form-control" id="numdocumento" placeholder="Ingrese nueva Sede" value="" required>
+              <input type="text" class="form-control" id="nuevaSede" placeholder="Ingrese nueva Sede" value="" required>
             </div>
           </div>
           <p></p>
           <!-- botones formulario -->
           <p></p>
-          <a href="#" id="registrarNuevo" class="btn btn-success">Añadir Nuevo</a>
+          <a href="#" id="registrarSede" class="btn btn-success">Añadir Nuevo</a>
           <a type="#" id="borrarCampos" class="btn btn-danger">Borrar campos</a>
           </form>
         </div>  <!--card-body-->

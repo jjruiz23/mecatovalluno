@@ -23,6 +23,7 @@
         <div class="card-body">
         <form id="frmRegistro">
 
+          <a href="consoTiendas.php" class="btn btn-outline-success">Consolidado Tiendas</a> <!--boton -->
           <a href="crearPais.php" class="btn btn-outline-success" >Crear Pais</a> <!--boton -->
           <a href="crearSede.php" class="btn btn-outline-success">Crear Sede</a> <!--boton -->
           <p></p>

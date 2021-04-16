@@ -71,7 +71,7 @@
                                                 </thead>
 
                                                 <tbody>
-                                                    <!--para rellenar campos-->
+                                                    <!--para rellenar campos con los datos el array de la consulta debe ir en el tbody-->
                                                     <?php //lienas php
                                                     $query = "SELECT * FROM estudiantes";  // llamar toda la info de la tabla estudiantes
                                                     // almacenar la verificacion de datos de la conexion y el query y alamcenarlo
@@ -104,7 +104,7 @@
                                                             </td>
                                                         </tr>
 
-                                                    <?php }  // cierro tabla html entre lineas php
+                                                    <?php }  // cierro el array con los datos de la consulta para mostrar dentro del tbody
                                                     ?>
                                                 </tbody>
                                             </table>

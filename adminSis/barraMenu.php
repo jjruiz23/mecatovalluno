@@ -44,6 +44,7 @@
                 <li><a class="dropdown-item" href="crearPais.php">Crear Pais</a></li>
                 <li><a class="dropdown-item" href="crearCiudad.php">Crear Ciudad</a></li>
                 <li><a class="dropdown-item" href="crearSede.php">Crear Sede</a></li>
+                <li><a class="dropdown-item" href="consoTiendas.php">Consolidado</a></li>
               </ul>
             </li>
           </form>

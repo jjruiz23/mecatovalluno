@@ -33,29 +33,29 @@
                     <a href="crearPais.php" class="btn btn-outline-success" >Crear Pais</a> <!--boton -->
                     <a href="crearCiudad.php" class="btn btn-outline-success">Crear Ciudad</a> <!--boton -->
                     <a href="crearSede.php" class="btn btn-outline-success">Crear Sede</a> <!--boton -->
-                    <p></p>
-                    <h5 class="card-title">Consolidado General de Tiendas</h5>
-                    <p></p> <!-- espacio entre botones superiores y contenedor de resultado -->
 
+                    <p></p> <!-- espacio entre botones superiores y contenedor de resultado -->
 
                     <!-- CONTENEDOR DE RESULTADO DE BUSQUEDA -->
                     <div class="form-group">
                         <div class="form-row">
                             <div class="col-sm-12">
                                 <div class="row justify-content-center">
-
                                     
-
+                                    <div style="text-align: center;">
                                         <div class="table-responsive table-bordered border-success">
                                             <table class="table table-sm table-striped border-success ">
                                                 <!-- tabla con campos pequeños -->
-                                                <h4 class="text-center"> Resultado de busqueda </h4>
-
+                                                <h5 class="card-title">Consolidado General de Tiendas</h5>
                                                 <thead> <!-- encabezados de la tabla -->
                                                     <tr class="table-dark">
+                                                        <th>Filas</th>
                                                         <th>Pais</th>
                                                         <th>Ciudad</th>
-                                                        <th>Sede</th>                                                        
+                                                        <th>Sede</th>
+                                                        <th>Telefono</th>
+                                                        <th>Direccion</th>
+                                                        <th>Fecha Creacion</th>                                                        
                                                     </tr>
                                                 </thead>
                                                 <tbody>  <!-- cuerpo de la tabla, resultados de consulta sql -->
@@ -63,19 +63,24 @@
                                                 <?php  // inicio lineas php para descargar resultado de query en la tabla dentro del tbody
                                                     include '../dataBase/adminSis/queryConsoTiendas.php'; // invoco el query en directorio
                                                     while ($row = mysqli_fetch_row($resultConsoTiendas)) { // separar tuplas de datos del resultado sql
+                                                        $fila = $fila + 1;
                                                     ?>
                                                 <tr>
+                                                    <td><?= $fila ?></td>
                                                     <td><?= $row[0] ?></td> <!-- imprimir el dato mediante la variable $row de $result -->
                                                     <td><?= $row[1] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
                                                     <td><?= $row[2] ?></td> <!-- o por la posicion dada en el query de consutlta -->
+                                                    <td><?= $row[3] ?></td> <!-- imprimir el dato mediante la variable $row de $result -->
+                                                    <td><?= $row[4] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
+                                                    <td><?= $row[5] ?></td> <!-- o por la posicion dada en el query de consutlta -->
                                                     
                                                 </tr>
                                                 <?php } // cierro el query de consulta y extraccion de datos para mostrar dentro del tbody
-                                    ?>
+                                                ?>
                                                 </tbody>
                                             </table>
-                                        </div> <!--  row -->
-                                    
+                                        </div> <!--  table-responsive table-bordered border-success -->
+                                    </div>   <!--style aling center-->                              
 
                                 </div> <!--row justify-content-center-->
                             </div> <!--col-sm-12-->

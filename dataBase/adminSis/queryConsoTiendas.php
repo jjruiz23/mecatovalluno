@@ -2,9 +2,9 @@
 <?php require_once ("../dataBase/conexion.php");
 $conexion = conexion();
 
-#2. Definir la acción a realizar (selecT -> RESULSET)
+#2. Definir la acción a realizar (selecT -> RESULSET)  con DATE() se extrae la fecha sin hora
 
-$sql = "SELECT  p.nomPais, c.nomCiudad, s.nomSede
+$sql = "SELECT  p.nomPais, c.nomCiudad, s.nomSede, s.telefonoSede, s.direSede, DATE(s.fechaCreacion)
 			FROM pais p
 			INNER JOIN ciudad c ON p.idPais = c.idPais
 			INNER JOIN sede s ON c.idCiudad = s.idCiudad

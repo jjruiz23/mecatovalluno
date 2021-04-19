@@ -43,7 +43,17 @@
               <?php endif ?>
             </div>
             <div class="col-sm-4">
-              <input type="text" class="form-control" id="nuevaSede" placeholder="Ingrese nueva Sede" value="" required>
+              <input type="text" class="form-control" id="nuevaSede" placeholder="Ingrese Nombre" value="" required>
+            </div>
+          </div>
+          <p></p>
+          <!-- segunda fila de inputs -->
+          <div class="row g-3">   
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="telefonoSede" placeholder="Ingrese Telefono" value="" required>
+            </div>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="direcSede" placeholder="Ingrese Direccion" value="" required>
             </div>
           </div>
           <p></p>

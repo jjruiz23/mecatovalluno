@@ -186,13 +186,21 @@ function accionesAdminSis(){      // se crea funcion de js
         alertify.alert("<b>Debes elegir La ciudad</b> Campo en blanco").setHeader('<b> Cuidado! </b></em> ');  // mensaje de alerta indicando que el campo esta vacio
         return false;   //para que el mensaje no se cierre automaticamente
     }else if($('#nuevaSede').val()==""){  
-      alertify.alert("<b>Debes digitar la Nueva Sede</b> Campo en blanco").setHeader('<em> Alerta </em>');
+      alertify.alert("Debes digitar <b>El NOMBRE de Nueva Sede</b> Campo en blanco").setHeader('<em> Alerta </em>');
+      return false;        
+    }else if($('#telefonoSede').val()==""){  
+      alertify.alert("Debes digitar <b>El TELEFONO de Nueva Sede</b> Campo en blanco").setHeader('<em> Alerta </em>');
+      return false;        
+    }else if($('#direcSede').val()==""){  
+      alertify.alert("Debes digitar <b>La DIRECCION de Nueva Sede</b> Campo en blanco").setHeader('<em> Alerta </em>');
       return false;        
     }
 
     // crear paquete de datos para pasar al ajax
     cadenaCiudad="nuevaSede=" + $('#nuevaSede').val() +
-                  "&idCiudad=" + $('#idCiudad').val();
+                  "&idCiudad=" + $('#idCiudad').val() +
+                  "&telefonoSede=" + $('#telefonoSede').val()+
+                  "&direcSede=" + $('#direcSede').val();
 
     //creo el ajax
     $.ajax({
@@ -201,12 +209,12 @@ function accionesAdminSis(){      // se crea funcion de js
       data:cadenaCiudad,
       success:function(r){
           if(r==2){
-              alertify.alert("Esta Sede ya existe, Prueba con otra").setHeader('<em> Cuidado </em> ');
+              alertify.alert("<b>Esta Sede ya existe</b>, Prueba con otra").setHeader('<em> Cuidado </em> ');
               return false;
           }
           else{
               $('#frmRegistro')[0].reset();
-              alertify.success("Agregado con exito");
+              alertify.success("<b>Agregado con exito</b> Sede ingresada con EXITO!");
               return false;
           }
       }   //success function

@@ -30,15 +30,10 @@
             <div class="card">
                 <h5 class="card-header">Consolidado Personal</h5>  <!--titulo -->
                 <div class="card-body">
-                    <a href="crearPer.php" class="btn btn-outline-success">Crear</a>
-                    <!--boton -->
-                    <a href="buscPerResul.php" class="btn btn-outline-success">Buscar</a>
-                    <!--boton -->
-
-                    <p></p>
-                    <h5 class="card-title">Consolidado General de Personal</h5>
+                    <a href="crearPer.php" class="btn btn-outline-success">Crear</a>    <!--boton -->
+                    <a href="buscPerResul.php" class="btn btn-outline-success">Buscar</a>     <!--boton -->
+                    
                     <p></p> <!-- espacio entre botones superiores y contenedor de resultado -->
-
 
                     <!-- CONTENEDOR DE RESULTADO DE BUSQUEDA -->
                     <div class="form-group">
@@ -47,13 +42,11 @@
                                 <div class="row justify-content-center">
 
                                     <!-- CONTENEDOR DE RESULTADOS -->
-                                    <div class="form-row">
-                                        <!-- primer form-row-->
-                                        <div class="table-responsive">
-                                            <table class="table table-sm table-striped">
-                                                <!-- tabla con campos pequeños -->
-
-                                                <thead class="thead-dark">
+                                    <div style="text-align: center;">
+                                    <div class="table-responsive table-bordered border-success">
+                                            <table class="table table-sm table-striped border-success ">
+                                            <h5 class="card-title">Consolidado General de Personal</h5>
+                                                <thead class="table-dark">
                                                     <!-- para resaltar encabezados -->
                                                     <tr>
                                                         <!-- encabezados de tabla -->
@@ -109,8 +102,8 @@
                                                 </tbody>
                                             </table>
                                         </div> <!-- table responsive -->
-                                    </div> <!-- fin primer form-row -->
-
+                                    </div>
+                                    
                                 </div> <!--  row -->
                             </div>
                             <!--col-sm-12-->

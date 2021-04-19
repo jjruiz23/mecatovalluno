@@ -5,6 +5,8 @@
 
 		$nuevaSede=$_POST['nuevaSede']; // creo variable $tipodoc y le asigno los datos recibidos desde regisEst.php
 		$idCiudad=$_POST['idCiudad'];
+		$telefonoSede=$_POST['telefonoSede'];
+		$direcSede=$_POST['direcSede'];
 
 	// de buscaRepetido se responde a regisEst.php mediante el echo
 		if(buscaRepetido($nuevaSede,$idCiudad,$conexion)==1){  // si el resultado de la funcion es igual a 1
@@ -13,7 +15,7 @@
             // realizar inserccion de datos a la base de datos
             // insertar en la tabla personal en los campos (*,*,*,*)
             //los valores de las variables ('*','*','*','*')
-			$sql="INSERT into sede (nomSede,idCiudad) values ('$nuevaSede','$idCiudad')";
+			$sql="INSERT into sede (nomSede,idCiudad,telefonoSede,direSede) values ('$nuevaSede','$idCiudad','$telefonoSede','$direcSede')";
 			$result=mysqli_query($conexion,$sql); ////la funcion mysqli_query devulve un valor mayor a 0 si encuentra resultado de $sql en $conexion
 
 		}

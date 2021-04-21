@@ -23,8 +23,8 @@
             // realizar inserccion de datos a la base de datos
             // insertar en la tabla personal en los campos (*,*,*,*)
             //los valores de las variables ('*','*','*','*')
-			$sql="INSERT into personal (nombres,apellidos,email,fechaNac,tipoDoc,numDocumento,estCivil,celular,sede,telefono,salarios,direccion)
-				values ('$nombres','$apellidos','$email','$fechanac','$tipodoc','$numdocumento','$estcivil','$celular','$sede','$telefono','$salario','$direccion')";
+			$sql="INSERT into personal (nombres,apellidos,email,fechaNac,idTipoDoc,numDocumento,idEstCivil,celular,idSede,telefono,idSalarios,direccion)
+				values ('$nombres','$apellidos','$email','$fechanac','$tipodoc','$numdocumento','$estcivil','$celular','$sede','$telefono','$salarios','$direccion')";
 			$result=mysqli_query($conexion,$sql); ////la funcion mysqli_query devulve un valor mayor a 0 si encuentra resultado de $sql en $conexion
 
 		}

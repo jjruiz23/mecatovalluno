@@ -26,40 +26,40 @@ function accionesAdminSis(){      // se crea funcion de js
     $('#registrarNuevo').click(function(){  // primer fila de inputs
         console.log("cargo accion validar datos en blanco form");
         if($('#tipodoc').val().trim() === ''){  // primera fila de inputs
-          alertify.alert("Debes Elegir tipo de documento").setHeader('<em> Alerta </em>');
+          alertify.alert("Debes Elegir <b>Tipo de Documento</b>").setHeader('<em> Alerta </em>');
           return false;
         }else if($('#numdocumento').val()==""){
-          alertify.alert("Debes Digitar Numero de documento").setHeader('<em> Alerta </em>');
+          alertify.alert("Debes Digitar <b>Numero de documento</b>").setHeader('<em> Alerta </em>');
           return false;
         }else if($('#nombres').val()==""){  // segunda fila de inputs
-          alertify.alert("Debes Digitar Nombre(s)").setHeader('<em> Alerta </em>');
+          alertify.alert("Debes Digitar <b>Nombre(s)</b>").setHeader('<em> Alerta </em>');
           return false;
         }else if($('#apellidos').val()==""){
-          alertify.alert("Debes Digitar Apellido(s)").setHeader('<em> Alerta </em>');
+          alertify.alert("Debes Digitar <b>Apellido(s)</b>").setHeader('<em> Alerta </em>');
           return false;
         }else if($('#celular').val()==""){  // tercera fila de inputs
-          alertify.alert("Debes Digitar Numero Celular").setHeader('<em> Alerta </em>');
+          alertify.alert("Debes Digitar <b>Numero Celular</b>").setHeader('<em> Alerta </em>');
           return false;
         }else if($('#telefono').val()==""){
-          alertify.alert("Debes Digitar telefono").setHeader('<em> Alerta </em>');
+          alertify.alert("Debes Digitar <b>Telefono</b>").setHeader('<em> Alerta </em>');
           return false;
         }else if($('#direccion').val()==""){    //cuarta fila de inputs
-          alertify.alert("Debes Digitar direccion").setHeader('<em> Alerta </em>');
+          alertify.alert("Debes Digitar <b>Direccion</b>").setHeader('<em> Alerta </em>');
           return false;     
         }else if($('#email').val()==""){  
-          alertify.alert("Debes Digitar Correo Electronico").setHeader('<em> Alerta </em>');
+          alertify.alert("Debes Digitar <b>Correo Electronico</b>").setHeader('<em> Alerta </em>');
           return false;        
         }else if($('#fechanac').val()==""){   // quinta fila de inputs
-          alertify.alert("Debes elegir una fecha de nacimiento").setHeader('<em> Alerta </em>');
+          alertify.alert("Debes elegir una <b>fecha de nacimiento</b>").setHeader('<em> Alerta </em>');
           return false;        
         }else if($('#estcivil').val().trim() === ''){
-          alertify.alert("Debes Elegir Estado Civil").setHeader('<em> Alerta </em>');
+          alertify.alert("Debes Elegir <b>Estado Civil</b>").setHeader('<em> Alerta </em>');
           return false;        
         }else if($('#sede').val().trim() === ''){ // sexta fila de inputs
-          alertify.alert("Debes Elegir sede").setHeader('<em> Alerta </em>');
+          alertify.alert("Debes Elegir <b>sede</>").setHeader('<em> Alerta </em>');
           return false;        
         }else if($('#salarios').val().trim() === ''){
-          alertify.alert("Debes Elegir Salario").setHeader('<em> Alerta </em>');
+          alertify.alert("Debes Elegir <b>Salario</b>").setHeader('<em> Alerta </em>');
           return false;        
         }
 
@@ -90,7 +90,7 @@ function accionesAdminSis(){      // se crea funcion de js
             }
             else{
                 $('#frmRegistro')[0].reset();
-                alertify.success("Agregado con exito");
+                alertify.success("Nuevo Personal</b> ingresado con EXITO!");
                 return false; //para que el mensaje no se cierre automaticamente
             }
             // recepcion de respuesta no funciona correctamente
@@ -138,7 +138,7 @@ function accionesAdminSis(){      // se crea funcion de js
             }
             else{
                 $('#frmRegistro')[0].reset();
-                alertify.success("Agregado con exito");
+                alertify.success("Nuevo Pais</b> ingresado con EXITO!");
                 return false;
             }
         }   //success function
@@ -147,7 +147,7 @@ function accionesAdminSis(){      // se crea funcion de js
 
   // control de no inputs en blanco en form crearCiudad y envio mediante AJAX
   $('#registrarCiudad').click(function(){  // asigno evento a funcion click del boton Entrar utilizando #
-    if ($('#idPais').val() == "") {   // si el input usuario esta vacio
+    if ($('#idPais').val().trim() === '') {   // si el input usuario esta vacio
         console.log("cargo accion ctrl espacio en blaco");
         alertify.alert("<b>Debes elegir el Pais</b> Campo en blanco").setHeader('<b> Cuidado! </b></em> ');  // mensaje de alerta indicando que el campo esta vacio
         return false;   //para que el mensaje no se cierre automaticamente
@@ -172,7 +172,7 @@ function accionesAdminSis(){      // se crea funcion de js
           }
           else{
               $('#frmRegistro')[0].reset();
-              alertify.success("Agregado con exito");
+              alertify.success("Nueva Ciudad</b> ingresada con EXITO!");
               return false;
           }
       }   //success function
@@ -181,7 +181,7 @@ function accionesAdminSis(){      // se crea funcion de js
 
   // control de no inputs en blanco en form crearSede y envio mediante AJAX
   $('#registrarSede').click(function(){  // asigno evento a funcion click del boton Entrar utilizando #
-    if ($('#idCiudad').val() == "") {   // si el input usuario esta vacio
+    if ($('#idCiudad').val().trim() === '') {   // si el input usuario esta vacio
         console.log("cargo accion ctrl espacio en blaco");
         alertify.alert("<b>Debes elegir La ciudad</b> Campo en blanco").setHeader('<b> Cuidado! </b></em> ');  // mensaje de alerta indicando que el campo esta vacio
         return false;   //para que el mensaje no se cierre automaticamente
@@ -214,7 +214,71 @@ function accionesAdminSis(){      // se crea funcion de js
           }
           else{
               $('#frmRegistro')[0].reset();
-              alertify.success("<b>Agregado con exito</b> Sede ingresada con EXITO!");
+              alertify.success("<b>Nueva Sede</b> ingresada con EXITO!");
+              return false;
+          }
+      }   //success function
+    }); //ajax
+  }); //.click(funtion)
+
+    // control de no inputs en blanco en form crearROL y envio mediante AJAX
+    $('#registrarRol').click(function(){  // asigno evento a funcion click del boton Entrar utilizando #
+      if ($('#nuevoRol').val() == "") {   // si el input usuario esta vacio
+          console.log("cargo accion ctrl espacio en blaco");
+          alertify.alert("<b>Debes ingresar el Nuevo Rol</b> Campo en blanco").setHeader('<b> Cuidado! </b></em> ');  // mensaje de alerta indicando que el campo esta vacio
+          return false;   //para que el mensaje no se cierre automaticamente
+      }
+
+      // crear paquete de datos para pasar al ajax
+      cadenaPais="nuevoRol=" + $('#nuevoRol').val();
+
+      //creo el ajax
+      $.ajax({
+        type:"POST",
+        url:"../dataBase/adminSis/regisRolAjax.php",
+        data:cadenaPais,
+        success:function(r){
+            if(r==2){
+                alertify.alert("Este Rol ya existe, Prueba con otro").setHeader('<em> Cuidado </em> ');
+                return false;
+            }
+            else{
+                $('#frmRegistro')[0].reset();
+                alertify.success("<b>Nuevo Rol</b> ingresado con EXITO!");
+                return false;
+            }
+        }   //success function
+      }); //ajax
+    }); //.click(funtion)
+
+    // control de no inputs en blanco en form asignarRol y envio mediante AJAX
+  $('#registrarRolxPersonal').click(function(){  // asigno evento a funcion click del boton Entrar utilizando #
+    if ($('#idPer').val().trim() === '') {   // si el input usuario esta vacio
+        console.log("cargo accion ctrl espacio en blaco");
+        alertify.alert("<b>Debes elegir el Empleado</b> Campo en blanco").setHeader('<b> Cuidado! </b></em> ');  // mensaje de alerta indicando que el campo esta vacio
+        return false;   //para que el mensaje no se cierre automaticamente
+    }else if($('#idRol').val().trim() === ''){  
+      alertify.alert("<b>Debes elegir el Rol</b> Campo en blanco").setHeader('<em> Alerta </em>');
+      return false;        
+    }
+
+    // crear paquete de datos para pasar al ajax
+    cadenaCiudad="idPer=" + $('#idPer').val() +
+                  "&idRol=" + $('#idRol').val();
+
+    //creo el ajax
+    $.ajax({
+      type:"POST",
+      url:"../dataBase/adminSis/regisRolPerAjax.php",
+      data:cadenaCiudad,
+      success:function(r){
+          if(r==2){
+              alertify.alert("<b>Esta Relacion Rol y empleado ya existe</b>, Prueba con otra").setHeader('<em> Cuidado </em> ');
+              return false;
+          }
+          else{
+              $('#frmRegistro')[0].reset();
+              alertify.success("<b>Nueva asignacion</b> ingresada con EXITO!");
               return false;
           }
       }   //success function

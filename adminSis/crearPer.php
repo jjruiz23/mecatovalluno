@@ -30,12 +30,16 @@
           <!-- Primer fila de inputs -->
           <div class="row g-3">   
             <div class="col-sm-4">
-              <select class="form-select" name="tipodoc" id="tipodoc" autofocus>  <!-- select que captura los option value -->
-                <option value="" selected="Elegir...">Tipo Documento &nbsp ... </option>
-                <option value="CEDULA C">Cedula C</option>
-                <option value="CEDULA">Cedula Extranjeria</option>
-                <option value="PASAPORTE">Pasaporte</option>
-              </select>
+              <!-- solicito la conexion y el query para mostrar datos de tabla en select -->
+              <?php include '../dataBase/adminSis/selects.php';  
+                 if ($resultadoTipoDoc): ?>
+                <select class="form-select" name="tipodoc" id="tipodoc" autofocus>  <!-- select que captura los option value -->
+                  <option value="" selected="Elegir...">Elija el Tipo de Documento &nbsp ... </option>                  
+                  <?php while ($rowy = mysqli_fetch_array($resultadoTipoDoc)): ?>
+	                  <option value ="<?php echo $rowy[0] ?>"><?php echo $rowy[1] ?></option>
+	                <?php endwhile; ?>
+                </select>
+              <?php endif ?>
             </div>
             <div class="col-sm-4">
               <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="numdocumento" placeholder="Numero Documento" value="" required>
@@ -85,32 +89,44 @@
               </div>     
             </div>
             <div class="col-sm-4">
-            <select class="form-select" name="estcivil" id="estcivil">  <!-- select que captura los option value -->
-                <option value="" selected="Elegir...">Estado Civil ... </option>
-                <option value="SOLTERO">Soltero</option>
-                <option value="CASADO">Casado</option>
-                <option value="VIUDO">Viudo</option>
-              </select>
-            </div>              
+              <!-- solicito la conexion y el query para mostrar datos de tabla en select -->
+              <?php include '../dataBase/adminSis/selects.php';  
+                 if ($resultadoEstCivil): ?>
+                <select class="form-select" name="estcivil" id="estcivil" autofocus>  <!-- select que captura los option value -->
+                  <option value="" selected="Elegir...">Elija el Estado Civil &nbsp ... </option>                  
+                  <?php while ($rowy = mysqli_fetch_array($resultadoEstCivil)): ?>
+	                  <option value ="<?php echo $rowy[0] ?>"><?php echo $rowy[1] ?></option>
+	                <?php endwhile; ?>
+                </select>
+              <?php endif ?>              
+            </div>
           </div>
           <p></p>
           <!-- Sexta fila de inputs -->
           <div class="row g-3">   
             <div class="col-sm-4">
-              <select class="form-select" name="sede" id="sede">  <!-- select que captura los option value -->
-                <option value="" selected="Elegir...">Sede ... </option>
-                <option value="CALI">Cali</option>
-                <option value="MEDELLIN">Medellin</option>
-                <option value="BOGOTA">Bogota</option>
-              </select>
+              <!-- solicito la conexion y el query para mostrar datos de tabla en select -->
+              <?php include '../dataBase/adminSis/selects.php';  
+                 if ($resultadoSede): ?>
+                <select class="form-select" name="sede" id="sede" autofocus>  <!-- select que captura los option value -->
+                  <option value="" selected="Elegir...">Elija la Sede &nbsp ... </option>                  
+                  <?php while ($rowy = mysqli_fetch_array($resultadoSede)): ?>
+	                  <option value ="<?php echo $rowy[0] ?>"><?php echo $rowy[1] ?></option>
+	                <?php endwhile; ?>
+                </select>
+              <?php endif ?> 
             </div>
             <div class="col-sm-4">
-            <select class="form-select" name="salarios" id="salarios">  <!-- select que captura los option value -->
-                <option value="" selected="Elegir...">Salario ... </option>
-                <option value=1000000>1.000.000</option>
-                <option value=1500000>1.500.000</option>
-                <option value=2200000>2.200.000</option>
-              </select>
+              <!-- solicito la conexion y el query para mostrar datos de tabla en select -->
+              <?php include '../dataBase/adminSis/selects.php';  
+                 if ($resultadoSalarios): ?>
+                <select class="form-select" name="salarios" id="salarios" autofocus>  <!-- select que captura los option value -->
+                  <option value="" selected="Elegir...">Elija el Salario &nbsp ... </option>                  
+                  <?php while ($rowy = mysqli_fetch_array($resultadoSalarios)): ?>
+	                  <option value ="<?php echo $rowy[0] ?>"><?php echo $rowy[1] ?></option>
+	                <?php endwhile; ?>
+                </select>
+              <?php endif ?> 
             </div>
           </div>
           <p></p>

@@ -51,39 +51,46 @@
                                                     <tr>
                                                         <!-- encabezados de tabla -->
                                                         <th>Fila</th>
-                                                        <th>Documento</th>
-                                                        <th>Numero</th>
+                                                        <th>IdPer</th>
+                                                        <th>Tipo Doc</th>
+                                                        <th>Numero Doc</th>
                                                         <th>Nombres</th>
                                                         <th>Apellidos</th>
-                                                        <th>Colegio</th>
-                                                        <th>Pais</th>
-                                                        <th>Departamento</th>
-                                                        <th>Ciudad</th>
-                                                        <th>Accion</th>
+                                                        <th>Celular</th>
+                                                        <th>Telefono</th>
+                                                        <th>Direccion</th>
+                                                        <th>Email</th>
+                                                        <th>Fecha Nacimiento</th>
+                                                        <th>Est Civil</th>
+                                                        <th>Sede</th>
+                                                        <th>Salario</th>
+                                                        <th>Acciones</th>
                                                     </tr>
                                                 </thead>
 
                                                 <tbody>
                                                     <!--para rellenar campos con los datos el array de la consulta debe ir en el tbody-->
                                                     <?php //lienas php
-                                                    $query = "SELECT * FROM estudiantes";  // llamar toda la info de la tabla estudiantes
-                                                    // almacenar la verificacion de datos de la conexion y el query y alamcenarlo
-                                                    $result_estudiantes = mysqli_query($conexion, $query);
-                                                    // mientras recorre el array de "result estudiantes" saque los datos en la variable $row
-                                                    while ($row = mysqli_fetch_array($result_estudiantes)) { ?>
-                                                        <?php $fila = $fila + 1; ?>
-                                                        <!-- actualizo variable y la uso como operador de incremento para identificar indice de filas -->
-                                                        <tr>
-                                                            <!-- mostrar filas con los resultados -->
-                                                            <td><?php echo  $fila ?> </td> <!-- identificador de filas resultantes -->
-                                                            <td><?php echo  $row['tipoDoc'] ?> </td> <!-- imprimir el dato mediante la variable $row de $result_estudiantes-->
-                                                            <td><?php echo  $row['numDoc'] ?> </td>
-                                                            <td><?php echo  $row['nombre'] ?> </td>
-                                                            <td><?php echo  $row['apellido'] ?> </td>
-                                                            <td><?php echo  $row['colegio'] ?> </td>
-                                                            <td><?php echo  $row['pais'] ?> </td>
-                                                            <td><?php echo  $row['departamento'] ?> </td>
-                                                            <td><?php echo  $row['ciudad'] ?> </td>
+                                                    include '../dataBase/adminSis/queryConsoPersonal.php'; // invoco el query en directorio
+                                                    while ($row = mysqli_fetch_row($resultConsoPersonal)) { // separar tuplas de datos del resultado sql
+                                                        $fila = $fila + 1;
+                                                    ?>
+                                                <tr>
+                                                    <td><?= $fila ?></td>
+                                                    <td><?= $row[0] ?></td> <!-- imprimir el dato mediante la variable $row de $result -->
+                                                    <td><?= $row[5] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
+                                                    <td><?= $row[6] ?></td> <!-- o por la posicion dada en el query de consutlta -->
+                                                    <td><?= $row[1] ?></td> <!-- imprimir el dato mediante la variable $row de $result -->
+                                                    <td><?= $row[2] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
+                                                    <td><?= $row[8] ?></td> <!-- o por la posicion dada en el query de consutlta -->
+                                                    <td><?= $row[10] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
+                                                    <td><?= $row[12] ?></td> <!-- o por la posicion dada en el query de consutlta -->
+                                                    <td><?= $row[3] ?></td> <!-- imprimir el dato mediante la variable $row de $result -->
+                                                    <td><?= $row[4] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
+                                                    <td><?= $row[7] ?></td> <!-- o por la posicion dada en el query de consutlta -->
+                                                    <td><?= $row[9] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
+                                                    <td><?= $row[11] ?></td> <!-- o por la posicion dada en el query de consutlta -->
+                                                    
                                                             <!-- TD BOTONES edit and delete -->
                                                             <td>
                                                                 <!--enviar a edit.php pero pasando el dato de id de bd mediante php-->

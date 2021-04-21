@@ -32,8 +32,8 @@
                 Roles
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Crear</a></li>
-                <li><a class="dropdown-item" href="#">Asigar Rol</a></li>
+                <li><a class="dropdown-item" href="crearRol.php">Crear</a></li>
+                <li><a class="dropdown-item" href="asignarRol.php">Asigar Rol</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">

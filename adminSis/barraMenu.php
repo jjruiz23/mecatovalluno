@@ -16,6 +16,8 @@
               <li><a class="dropdown-item" href="crearPer.php">Crear</a></li>
                 <li><a class="dropdown-item" href="" id="btnBuscarPer">Buscar</a></li>
                 <li><a class="dropdown-item" href="consoPer.php">Consolidado</a></li>
+                <li><a class="dropdown-item" href="detaPer.php">detalles</a></li>
+
               </ul>
             </li>
             <li class="nav-item dropdown">

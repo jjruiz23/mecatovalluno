@@ -251,7 +251,7 @@ function accionesAdminSis(){      // se crea funcion de js
       }); //ajax
     }); //.click(funtion)
 
-    // control de no inputs en blanco en form asignarRol y envio mediante AJAX
+  // control de no inputs en blanco en form asignarRol y envio mediante AJAX
   $('#registrarRolxPersonal').click(function(){  // asigno evento a funcion click del boton Entrar utilizando #
     if ($('#idPer').val().trim() === '') {   // si el input usuario esta vacio
         console.log("cargo accion ctrl espacio en blaco");
@@ -285,4 +285,11 @@ function accionesAdminSis(){      // se crea funcion de js
     }); //ajax
   }); //.click(funtion)
 
+  // mensaje de informacion sobre funcion del boton VER DETALLES PERSONAL
+  $('#detallePersonal').one('mousemove', function(){  // asigno evento a funcion click del boton Entrar utilizando #
+      alertify.success("<b>Ver Detalles</b> de empleado");
+      return false;
+  }); //.click(funtion)
+
+  
 }

@@ -43,68 +43,79 @@
 
                                     <!-- CONTENEDOR DE RESULTADOS -->
                                     <div style="text-align: center;">
-                                        <div class="table-responsive table-bordered border-success">
+                                    <div class="table-responsive table-bordered border-success">
                                             <table class="table table-sm table-striped border-success ">
                                             <h5 class="card-title">Consolidado General de Personal</h5>
                                                 <thead class="table-dark">
                                                     <!-- para resaltar encabezados -->
                                                     <tr>
                                                         <!-- encabezados de tabla -->
-                                                        <th>Fila</th>                                                        
+                                                        <th>Fila</th>
+                                                        <th>IdPer</th>
                                                         <th>Tipo Doc</th>
                                                         <th>Numero Doc</th>
                                                         <th>Nombres</th>
                                                         <th>Apellidos</th>
-                                                        <th>Celular</th>                                                        
+                                                        <th>Celular</th>
+                                                        <th>Telefono</th>
+                                                        <th>Direccion</th>
+                                                        <th>Email</th>
+                                                        <th>Fecha Nacimiento</th>
+                                                        <th>Est Civil</th>
                                                         <th>Sede</th>
-                                                        <th>Cargo</th>                                                   
+                                                        <th>Salario</th>
+                                                        <th>Cargo</th>
                                                         <th>Acciones</th>
                                                     </tr>
                                                 </thead>
 
                                                 <tbody>
-                                                <!--para rellenar campos con los datos el array de la consulta debe ir en el tbody-->
-                                                <?php //lienas php
-                                                    include '../dataBase/adminSis/queryConsoPersonal.php'; // invoco el query en directorio
-                                                    while ($row = mysqli_fetch_row($resultConsoPersonal)) { // separar tuplas de datos del resultado sql
+                                                    <!--para rellenar campos con los datos el array de la consulta debe ir en el tbody-->
+                                                    <?php //lienas php
+                                                    include '../dataBase/adminSis/editarPer.php'; // invoco el query en directorio
+                                                    while ($row = mysqli_fetch_row($resultadoPesonalDet)) { // separar tuplas de datos del resultado sql
                                                         $fila = $fila + 1;  //incrementador contador de filas
-                                                        $idd =  strval($row[0]); // devolver valor en cadena de dato del array en el query
-                                                                                 // para enviar a otro modulo mediante post o get
                                                     ?>
                                                 <tr>
                                                     <td><?= $fila ?></td>
-                                                    <td><?= $row[3] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
-                                                    <td><?= $row[4] ?></td> <!-- o por la posicion dada en el query de consutlta -->
+                                                    <td><?= $row[0] ?></td> <!-- imprimir el dato mediante la variable $row de $result -->
+                                                    <td><?= $row[5] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
+                                                    <td><?= $row[6] ?></td> <!-- o por la posicion dada en el query de consutlta -->
                                                     <td><?= $row[1] ?></td> <!-- imprimir el dato mediante la variable $row de $result -->
                                                     <td><?= $row[2] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
-                                                    <td><?= $row[5] ?></td> <!-- o por la posicion dada en el query de consutlta -->
-                                                    <td><?= $row[6] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
+                                                    <td><?= $row[8] ?></td> <!-- o por la posicion dada en el query de consutlta -->
+                                                    <td><?= $row[10] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
+                                                    <td><?= $row[12] ?></td> <!-- o por la posicion dada en el query de consutlta -->
+                                                    <td><?= $row[3] ?></td> <!-- imprimir el dato mediante la variable $row de $result -->
+                                                    <td><?= $row[4] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
                                                     <td><?= $row[7] ?></td> <!-- o por la posicion dada en el query de consutlta -->
+                                                    <td><?= $row[9] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
+                                                    <td><?= $row[11] ?></td> <!-- o por la posicion dada en el query de consutlta -->
+                                                    <td><?= $row[13] ?></td> <!-- o por la posicion dada en el query de consutlta -->
                                                     
-                                                    <!-- TD BOTONES edit and delete -->
-                                                    <td>
-                                                        <!--enviar a detaPer.php pero pasando el dato de id de bd mediante php-->
-                                                        <a href="detaPer.php?id=<?php echo $idd ?>" id="detallePersonal" class="btn btn-light border-success">
-                                                            <img src="../includes/images/view.png" height="17">
-                                                        </a>
-                                                        <a href="editPer.php?id=<?php echo $idd ?>" id="editarPersonal" class="btn btn-light border-success">
-                                                            <img src="../includes/images/edit.png" height="17">
-                                                        </a>
-                                                        <a href="delPer.php?id=<?php echo $idd ?>" id="editarPersonal" class="btn btn-light border-success">
-                                                        <!--enviar a edit.php pero pasando el dato de id de bd mediante php para ubicar datos en edit.php-->
-                                                            <img src="../includes/images/delete.png" height="17">
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <?php }  // cierro el array con los datos de la consulta para mostrar dentro del tbody
-                                                ?>
+                                                            <!-- TD BOTONES edit and delete -->
+                                                            <td>
+                                                                <!--enviar a edit.php pero pasando el dato de id de bd mediante php-->
+                                                                <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">
+                                                                    <img src="../includes/images/edit.png" height="15">
+                                                                </a>
+                                                                <a href="delete_task.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">
+                                                                    <!--enviar a edit.php pero pasando el dato de id de bd mediante php para ubicar datos en edit.php-->
+                                                                    <img src="../includes/images/delete.png" height="15">
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+
+                                                    <?php }  // cierro el array con los datos de la consulta para mostrar dentro del tbody
+                                                    ?>
                                                 </tbody>
                                             </table>
                                         </div> <!-- table responsive -->
-                                    </div>  <!-- text-aling center -->
+                                    </div>
                                     
                                 </div> <!--  row -->
-                            </div>   <!--col-sm-12-->
+                            </div>
+                            <!--col-sm-12-->
                         </div> <!-- form-row-->
                     </div> <!-- class="form-group" CONTENEDOR BUSQUEDA -->
 

@@ -1,3 +1,25 @@
+// Funcion para controlar acciones de confirmacion. EDITAR Y ELIMINAR
+function ConfirmarAccionDel(){
+  var respuesta = confirm("Esta seguro de BORRAR informacion ?");   // var xx = confirm()  genera un boleano para confirmar accion
+  if(respuesta == true){  // si la respuesta es positivo
+    var msg = alertify.success('Default message');
+    msg.delay(3).setConten('Datos Borrados con <b>EXITO</b>');
+    return true;  // regrese un true
+  }else{  // sino
+    alertify.error("Error");
+    return false; //regrese un falso
+  }
+}
+// Funcion para controlar acciones de confirmacion. EDITAR Y ELIMINAR
+function ConfirmarAccionEdit(){
+  var respuesta = confirm("Esta seguro de EDITAR informacion?");   // var xx = confirm()  genera un boleano para confirmar accion
+  if(respuesta == true){  // si la respuesta es positivo
+    return true;  // regrese un true
+  }else{  // sino
+    return false; //regrese un falso
+  }  
+}
+
 function accionesAdminSis(){      // se crea funcion de js
 
     console.log("cargo la funcion acciones AdminSistema");    // para confirmar que funciona mediante vista desarrollador
@@ -285,10 +307,20 @@ function accionesAdminSis(){      // se crea funcion de js
     }); //ajax
   }); //.click(funtion)
 
-  // mensaje de informacion sobre funcion del boton VER DETALLES PERSONAL
+  // mensajes de informacion sobre botones DETALLES, EDITAR Y ELIMINAR PERSONAL
   $('#detallePersonal').one('mousemove', function(){  // asigno evento a funcion click del boton Entrar utilizando #
       alertify.success("<b>Ver Detalles</b> de empleado");
       return false;
+  }); //.click(funtion)
+  // mensaje de EDITAR
+  $('#editarPersonal').one('mousemove', function(){  // asigno evento a funcion click del boton Entrar utilizando #
+    alertify.warning("<b>Editar informacion</b> de empleado");
+    return false;
+  }); //.click(funtion)
+  // mensaje de ELIMINAR
+  $('#delPersonal').one('mousemove', function(){  // asigno evento a funcion click del boton Entrar utilizando #
+    alertify.error("<b>Eliminar info</b> de empleado");
+    return false;
   }); //.click(funtion)
 
   

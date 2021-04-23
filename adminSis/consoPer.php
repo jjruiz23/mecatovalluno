@@ -68,7 +68,7 @@
                                                     include '../dataBase/adminSis/queryConsoPersonal.php'; // invoco el query en directorio
                                                     while ($row = mysqli_fetch_row($resultConsoPersonal)) { // separar tuplas de datos del resultado sql
                                                         $fila = $fila + 1;  //incrementador contador de filas
-                                                        $idd =  strval($row[0]); // devolver valor en cadena de dato del array en el query
+                                                        $idd =  strval($row[0]); // guardar dato tipo string mediante castin
                                                                                  // para enviar a otro modulo mediante post o get
                                                     ?>
                                                 <tr>
@@ -81,17 +81,17 @@
                                                     <td><?= $row[6] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
                                                     <td><?= $row[7] ?></td> <!-- o por la posicion dada en el query de consutlta -->
                                                     
-                                                    <!-- TD BOTONES edit and delete -->
+                                                    <!-- TD BOTONES ver, editar y eliminar -->
                                                     <td>
-                                                        <!--enviar a detaPer.php pero pasando el dato de id de bd mediante php-->
+                                                        <!--enviar a xxxx.php pero pasando el dato de id de bd mediante php-->
                                                         <a href="detaPer.php?id=<?php echo $idd ?>" id="detallePersonal" class="btn btn-light border-success">
                                                             <img src="../includes/images/view.png" height="17">
                                                         </a>
-                                                        <a href="editPer.php?id=<?php echo $idd ?>" id="editarPersonal" class="btn btn-light border-success">
+                                                        </a><!-- utilizar funcion js para cofirmar accion -->
+                                                        <a href="../dataBase/adminSis/editPer.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionEdit()" id="editarPersonal" class="btn btn-light border-success">
                                                             <img src="../includes/images/edit.png" height="17">
-                                                        </a>
-                                                        <a href="delPer.php?id=<?php echo $idd ?>" id="editarPersonal" class="btn btn-light border-success">
-                                                        <!--enviar a edit.php pero pasando el dato de id de bd mediante php para ubicar datos en edit.php-->
+                                                        </a><!-- utilizar funcion js para cofirmar accion -->
+                                                        <a href="../dataBase/adminSis/delPer.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionDel()" id="delPersonal" class="btn btn-light border-success">
                                                             <img src="../includes/images/delete.png" height="17">
                                                         </a>
                                                     </td>

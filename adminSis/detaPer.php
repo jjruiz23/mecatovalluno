@@ -32,6 +32,7 @@
                 <div class="card-body">
                     <a href="crearPer.php" class="btn btn-outline-success">Crear</a>    <!--boton -->
                     <a href="buscPerResul.php" class="btn btn-outline-success">Buscar</a>     <!--boton -->
+                    <a href="consoPer.php" class="btn btn-outline-success">Consolidado</a>     <!--boton -->
                     
                     <p></p> <!-- espacio entre botones superiores y contenedor de resultado -->
 
@@ -71,8 +72,8 @@
 
                                                 <tbody>
                                                     <!--para rellenar campos con los datos el array de la consulta debe ir en el tbody-->
-                                                    <?php //lienas php
-                                                    include '../dataBase/adminSis/editarPer.php'; // invoco el query en directorio
+                                                    <?php //lineas php
+                                                    include '../dataBase/adminSis/detallesPer.php'; // invoco el query en directorio
                                                     while ($row = mysqli_fetch_row($resultadoPesonalDet)) { // separar tuplas de datos del resultado sql
                                                         $fila = $fila + 1;  //incrementador contador de filas
                                                     ?>

@@ -20,6 +20,11 @@ function ConfirmarAccionEdit(){
   }  
 }
 
+function refrescar(){
+  //actualizar pagina
+  location.reload();
+}
+
 function accionesAdminSis(){      // se crea funcion de js
 
     console.log("cargo la funcion acciones AdminSistema");    // para confirmar que funciona mediante vista desarrollador
@@ -43,8 +48,15 @@ function accionesAdminSis(){      // se crea funcion de js
         alertify.alert("<b>Datos borrados</b> Ingresar informacion de nuevo").setHeader('<b> Cuidado! </b></em> ');  // mensaje de alerta indicando que el campo esta vacio
         $("#frmRegistro")[0].reset();
       });
+    // Restaurar datos en form de con id id="frmRegistro" desde boton id="RestaurarCampos"
+    $("#restaurarCampos").click(function(){
+      console.log("cargo accion restaurar datos form");
+      alertify.alert("<b>Datos Iniciales</b> Restaurados").setHeader('<b> Listo! </b></em> ');  // mensaje de alerta indicando que el campo esta vacio
+      $("#frmRegistro")[0].reset();
+    });
 
-    // control de no inputs en blanco en form crearPersonal y envio mediante AJAX
+
+    // control CrearPersonal, no inputs en blanco en form  y envio mediante AJAX
     $('#registrarNuevo').click(function(){  // primer fila de inputs
         console.log("cargo accion validar datos en blanco form");
         if($('#tipodoc').val().trim() === ''){  // primera fila de inputs
@@ -115,27 +127,93 @@ function accionesAdminSis(){      // se crea funcion de js
                 alertify.success("Nuevo Personal</b> ingresado con EXITO!");
                 return false; //para que el mensaje no se cierre automaticamente
             }
-            // recepcion de respuesta no funciona correctamente
-            //if
-            /*
-                        if(r==2){
-                alertify.alert("Este personal ya existe, Prueba con otro").setHeader('<em> Titulo </em> ');
-                //return false;
-            }
-            else if(r==1){
-                $('#frmRegistro')[0].reset();
-                alertify.success("Agregado con exito");
-                //return false;
-            }
-            else{
-                alertify.error("Fallo al agregar");
-                //return false;
-            }       //if
-            */
+
         }   //success function
     }); //ajax
 
     }); //funcionregistrar nuevo
+
+    // EditPer, enviar datos nuevos para actualizar, control de no inputs en blanco en form y envio mediante AJAX
+    $('#actualizarPersonal').click(function(){  // primer fila de inputs
+      console.log("cargo accion validar editar datos form");
+      if($('#tipodoc').val().trim() === ''){  // primera fila de inputs
+        alertify.alert("Debes Elegir <b>Tipo de Documento</b>").setHeader('<em> Alerta </em>');
+        return false;
+      }else if($('#numdocumento').val()==""){
+        alertify.alert("Debes Digitar <b>Numero de documento</b>").setHeader('<em> Alerta </em>');
+        return false;
+      }else if($('#nombres').val()==""){  // segunda fila de inputs
+        alertify.alert("Debes Digitar <b>Nombre(s)</b>").setHeader('<em> Alerta </em>');
+        return false;
+      }else if($('#apellidos').val()==""){
+        alertify.alert("Debes Digitar <b>Apellido(s)</b>").setHeader('<em> Alerta </em>');
+        return false;
+      }else if($('#celular').val()==""){  // tercera fila de inputs
+        alertify.alert("Debes Digitar <b>Numero Celular</b>").setHeader('<em> Alerta </em>');
+        return false;
+      }else if($('#telefono').val()==""){
+        alertify.alert("Debes Digitar <b>Telefono</b>").setHeader('<em> Alerta </em>');
+        return false;
+      }else if($('#direccion').val()==""){    //cuarta fila de inputs
+        alertify.alert("Debes Digitar <b>Direccion</b>").setHeader('<em> Alerta </em>');
+        return false;     
+      }else if($('#email').val()==""){  
+        alertify.alert("Debes Digitar <b>Correo Electronico</b>").setHeader('<em> Alerta </em>');
+        return false;        
+      }else if($('#fechanac').val()==""){   // quinta fila de inputs
+        alertify.alert("Debes elegir una <b>fecha de nacimiento</b>").setHeader('<em> Alerta </em>');
+        return false;        
+      }else if($('#estcivil').val().trim() === ''){
+        alertify.alert("Debes Elegir <b>Estado Civil</b>").setHeader('<em> Alerta </em>');
+        return false;        
+      }else if($('#sede').val().trim() === ''){ // sexta fila de inputs
+        alertify.alert("Debes Elegir <b>sede</>").setHeader('<em> Alerta </em>');
+        return false;        
+      }else if($('#salarios').val().trim() === ''){
+        alertify.alert("Debes Elegir <b>Salario</b>").setHeader('<em> Alerta </em>');
+        return false;        
+      }
+
+      // crear paquete de datos para pasar al ajax
+
+      cadenaUpdate="nombres=" + $('#nombres').val() +
+              "&email=" + $('#email').val() +
+              "&apellidos=" + $('#apellidos').val() +
+              "&fechanac=" + $('#fechanac').val() +
+              "&tipodoc=" + $('#tipodoc').val() +
+              "&numdocumento=" + $('#numdocumento').val() +
+              "&estcivil=" + $('#estcivil').val() +
+              "&celular=" + $('#celular').val() +
+              "&sede=" + $('#sede').val() +
+              "&telefono=" + $('#telefono').val() +
+              "&salarios=" + $('#salarios').val() +
+              "&direccion=" + $('#direccion').val() +
+              "&idPers=" + $('#idPer').val();
+
+  //creo el ajax
+  $.ajax({
+      type:"POST",
+      url:"../dataBase/adminSis/actualizarPerAjax.php",
+      data:cadenaUpdate,
+      success:function(r){
+          if(r==2){
+              alertify.alert("Los datos son iguales.").setHeader('<em> No se relizaron cambios </em> ');
+              return false; //para que el mensaje no se cierre automaticamente              
+          }
+          else{
+              
+              //$('#frmRegistro')[0].reset();
+              //location.reload();
+              alertify.success("Nuevosss Datos </b> actualizados con EXITO!");
+              //setTimeout(refrescar,1000);
+              return false; //para que el mensaje no se cierre automaticamente
+              
+          }
+
+      }   //success function
+  }); //ajax
+
+  }); //actualizarPersonal
 
   // control de no inputs en blanco en form crearPais y envio mediante AJAX
     $('#registrarPais').click(function(){  // asigno evento a funcion click del boton Entrar utilizando #

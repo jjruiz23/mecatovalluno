@@ -88,7 +88,7 @@
                                                             <img src="../includes/images/view.png" height="17">
                                                         </a>
                                                         </a><!-- utilizar funcion js para cofirmar accion -->
-                                                        <a href="../dataBase/adminSis/editPer.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionEdit()" id="editarPersonal" class="btn btn-light border-success">
+                                                        <a href="editPer.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionEdit()" id="editarPersonal" class="btn btn-light border-success">
                                                             <img src="../includes/images/edit.png" height="17">
                                                         </a><!-- utilizar funcion js para cofirmar accion -->
                                                         <a href="../dataBase/adminSis/delPer.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionDel()" id="delPersonal" class="btn btn-light border-success">

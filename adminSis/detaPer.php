@@ -76,6 +76,8 @@
                                                     include '../dataBase/adminSis/detallesPer.php'; // invoco el query en directorio
                                                     while ($row = mysqli_fetch_row($resultadoPesonalDet)) { // separar tuplas de datos del resultado sql
                                                         $fila = $fila + 1;  //incrementador contador de filas
+                                                        $idd =  strval($row[0]); // guardar dato tipo string mediante castin
+                                                                                 // para enviar a otro modulo mediante post o get                                                
                                                     ?>
                                                 <tr>
                                                     <td><?= $fila ?></td>
@@ -97,13 +99,9 @@
                                                             <!-- TD BOTONES edit and delete -->
                                                             <td>
                                                                 <!--enviar a edit.php pero pasando el dato de id de bd mediante php-->
-                                                                <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">
+                                                                <a href="editPer.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionEdit()" id="editarPersonal" class="btn btn-light border-success btn-outline-dark">
                                                                     <img src="../includes/images/edit.png" height="15">
-                                                                </a>
-                                                                <a href="delete_task.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">
-                                                                    <!--enviar a edit.php pero pasando el dato de id de bd mediante php para ubicar datos en edit.php-->
-                                                                    <img src="../includes/images/delete.png" height="15">
-                                                                </a>
+                                                                </a>                                                                
                                                             </td>
                                                         </tr>
 

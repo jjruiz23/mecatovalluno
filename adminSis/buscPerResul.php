@@ -6,6 +6,9 @@
 <!-- solicito el header -->
 <?php include("../includes/header.php") ?>
 
+<!-- INICIALIZAR VARIABLE EN 0 de forma global para usar en while de tabla -->
+<?php $fila = 0; ?>
+
 <!-- body de la pagina -->
 
 <p></p> <!--  espacio entre contenidos -->
@@ -60,56 +63,67 @@
                                     include '../dataBase/buscadorPer.php'; // invoco el query en buscadorPer.php
 
                                     //entonces obtenga un array con los datos de la variable $result proveniente de cbrrador2.php
-                                    while ($row = mysqli_fetch_array($result)) { ?>
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        $fila = $fila + 1;  //incrementador contador de filas
+                                        $idd =  strval($row[0]); // guardar dato tipo string mediante castin
+                                                                 // para enviar a otro modulo mediante post o get ?>
+                                        
                                         <!--los datos de los campos en Bd los almaceno en la variable $row -->
-
+                                        
+                                    <!-- CONTENEDOR DE RESULTADOS -->
+                                    <div style="text-align: center;">
                                         <!-- inicio lineas html para graficar tabla -->
                                         <div class="table-responsive table-bordered border-success">
                                             <table class="table table-sm table-striped border-success ">
-                                                <!-- tabla con campos pequeños -->
-                                                <h4 class="text-center"> Resultado de busqueda </h4>
-
+                                            <!-- tabla con campos pequeños -->
+                                            <h4 class="text-center"> Resultado de busqueda </h4>
                                                 <thead>
                                                     <!-- bloque de filas <tr> -->
                                                     <!-- para resaltar encabezados -->
                                                     <tr class="table-dark">
                                                         <!-- encabezados de tabla -->
-                                                        <th>Tipo Documento</th>
-                                                        <th>Numero Documento</th>
-                                                        <th>Nombre</th>
-                                                        <th>Apellido</th>
-                                                        <th>Colegio</th>
-                                                        <th>Pais</th>
-                                                        <th>Departamento</th>
-                                                        <th>Ciudad</th>
-                                                        <th>Accion</th>
+                                                        <th>Fila</th>
+                                                        <th>idPer</th>
+                                                        <th>Tipo Doc</th>
+                                                        <th>Numero Doc</th>
+                                                        <th>Nombres</th>
+                                                        <th>Apellidos</th>
+                                                        <th>Celular</th>
+                                                        <th>Sede</th>
+                                                        <th>Cargo</th>
+                                                        <th>Acciones</th>
                                                     </tr>
                                                 </thead>
 
                                                 <tr>
                                                     <!-- mostrar filas con los resultados -->
-                                                    <td><?= $row['tipoDoc'] ?></td> <!-- imprimir el dato mediante la variable $row de $result -->
-                                                    <td><?= $row['numDoc'] ?></td>
-                                                    <td><?= $row['nombre'] ?></td>
-                                                    <td><?= $row['apellido'] ?></td>
-                                                    <td><?= $row['colegio'] ?></td>
-                                                    <td><?= $row['pais'] ?></td>
-                                                    <td><?= $row['departamento'] ?></td>
-                                                    <td><?= $row['ciudad'] ?></td>
+                                                    <td><?= $fila ?></td> <!-- imprimir el dato mediante la variable $row de $result -->
+                                                    <td><?= $row[0] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
+                                                    <td><?= $row[3] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
+                                                    <td><?= $row[4] ?></td> <!-- o por la posicion dada en el query de consutlta -->
+                                                    <td><?= $row[1] ?></td> <!-- imprimir el dato mediante la variable $row de $result -->
+                                                    <td><?= $row[2] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
+                                                    <td><?= $row[5] ?></td> <!-- o por la posicion dada en el query de consutlta -->
+                                                    <td><?= $row[6] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
+                                                    <td><?= $row[7] ?></td> <!-- o por la posicion dada en el query de consutlta -->
                                                     <!-- TD BOTONES edit and delete -->
                                                     <td>
-                                                        <!--enviar a edit.php pero pasando el dato de id de bd mediante php para ubicar datos en edit.php-->
-                                                        <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">
-                                                            <img src="../includes/images/edit.png" height="28">
+                                                        <!--enviar a xxxx.php pero pasando el dato de id de bd mediante php-->
+                                                        <a href="detaPer.php?id=<?php echo $idd ?>" id="detallePersonal" class="btn btn-light border-success btn-outline-dark">
+                                                            <img src="../includes/images/view.png" height="17">
                                                         </a>
-                                                        <a href="delete_task.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">
-                                                            <!--enviar a edit.php pero pasando el dato de id de bd mediante php para ubicar datos en edit.php-->
-                                                            <img src="../includes/images/delete.png" height="28">
+                                                        </a><!-- utilizar funcion js para cofirmar accion -->
+                                                        <a href="editPer.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionEdit()" id="editarPersonal" class="btn btn-light border-success btn-outline-dark">
+                                                            <img src="../includes/images/edit.png" height="17">
+                                                        </a><!-- utilizar funcion js para cofirmar accion -->
+                                                        <a href="../dataBase/adminSis/delPer.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionDel()" id="delPersonal" class="btn btn-light border-success btn-outline-dark">
+                                                            <img src="../includes/images/delete.png" height="17">
                                                         </a>
                                                     </td> <!-- TD BOTONES edit and delete -->
                                                 </tr>
                                             </table>
                                         </div>
+                                    </div>
 
                                     <?php } // cierro tabla html entre lineas php
                                     ?>

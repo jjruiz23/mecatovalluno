@@ -51,33 +51,6 @@
                         $s_idSede = $row['idSede'];
                         $sl_idSalarios = $row['idSalarios'];
                 }
-
-                if(isset($_POST['actualizarPersonal'])){     // si existe un [variable]
-                        $p_idPer = $GET['idPer'];         //en la variable capturo los datos de POST en bd por nombre de indice  o ubicacion en el query
-                        $p_nombres = $POST['nombres'];
-                        $p_apellidos = $POST['apellidos'];
-                        $p_email = $POST['email'];
-                        $p_fechaNac = $POST['fechanac'];  // se captura por valor de ubicacion en el query
-                        $td_nomTipoDoc = $POST['nomTipoDoc'];
-                        $p_numDocumento = $POST['numDocumento'];
-                        $ec_nomEstCivil = $POST['estCivil'];
-                        $p_celular = $POST['celular'];
-                        $s_nomSede = $POST['Sede'];
-                        $p_telefono = $POST['telefono'];
-                        $sl_valorSalario = $POST['Salario'];
-                        $p_direccion = $POST['direccion'];
-                        $r_nomRol = $POST['nomRol'];
-
-                        //actualizar en la tabla el campo='variable'   donde campo='variable'  
-			$query="UPDATE personal set nombres='$nombres', apellidos='$apellidos', email='$email', fechaNac='$fechanac',
-                        idTipoDoc='$tipodoc', numDocumento='$numdocumento', idEstCivil='$estcivil', celular='$celular', idSede='$sede', telefono='$telefono',
-                        idSalarios='$salarios', direccion='$direccion' WHERE idPer='$idPer'";
-                        $result1=mysqli_query($conexion,$query); ////la funcion mysqli_query devulve un valor mayor a 0 si encuentra resultado de $sql en $conexion
-
-                        header('Refresh: 3; URL=../adminSis/editPer.php');
-
-                        echo '<p class="alert alert-success agileits" role="alert"><b>EXITO !!!  </b>Datos Actualizados correctamente.';
                 
-                }
         }
 ?>

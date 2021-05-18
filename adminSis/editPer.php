@@ -28,7 +28,7 @@
 
         <!-- <form id="frmRegistro" action="../adminSis/editPer.php?id=<?php echo $_GET['id']; ?>" method="POST"> -->
         <form id="frmRegistro">
-          <!-- solicito el query con los datos de consulta para editar -->
+          <!-- solicito el query con los datos de consulta para mostrar y porteriormente editar -->
           <!-- y mediante php imprimirlos en los inputs y selects -->
           <?php include '../dataBase/adminSis/editarPer.php'; ?>          
 
@@ -40,7 +40,7 @@
               <?php include '../dataBase/adminSis/selects.php';  
                  if ($resultadoTipoDoc): ?>
                 <select class="form-select" name="tipodoc" id="tipodoc" autofocus>  <!-- select que captura los option value -->
-                  <!-- SELECT se muestra el valor de la variable y se asigna el mismo valor -->
+                  <!-- SELECT se muestra el dato de la variable y se asigna el valor del dato -->
                   <option value="<?php echo $td_idTipoDoc;?>" selected="Elegir..."><?php echo $td_nomTipoDoc;?></option>                  
                   <?php while ($rowy = mysqli_fetch_array($resultadoTipoDoc)): ?>
 	                  <option value ="<?php echo $rowy[0] ?>"><?php echo $rowy[1] ?></option>
@@ -54,7 +54,7 @@
             </div>
             <div class="col-sm-1">
               <!-- INPUT se muestra el valor de la variable -->
-              <input type="text" disabled value="<?php echo $p_idPer;?>" class="form-control" id="idPer" required>
+              <input type="hidden" disabled value="<?php echo $p_idPer;?>" class="form-control" id="idPer" required>
             </div>
           </div>
           <p></p>
@@ -143,7 +143,6 @@
           </div>
           <p></p>
           <!-- botones formulario -->
-          <p></p>
           <a type="#" id="actualizarPersonal" name="actualizarPersonal" class="btn btn-success">Actualizar Datos</a type="#">
           <a type="#" id="restaurarCampos" class="btn btn-primary">Restaurar Datos</a>
           </form>

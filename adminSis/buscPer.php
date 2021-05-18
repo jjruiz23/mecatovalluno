@@ -18,6 +18,7 @@
             <div class="col-sm">
             </div>
             <div class="col-sm-4 col-md-4 col-xs-4">
+                <!-- Envio informacion a modulo para procesar informacion -->
                 <form action="../adminSis/buscPerResul.php" method="get" id="respuesta">
                     <!-- recargo pagina con el resultado del query -->
                     <input type="text" style="text-align:center" name="buscador" id="buscador" placeholder="Ingrese ID"> <!-- input captura de datos-->

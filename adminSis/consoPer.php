@@ -70,6 +70,7 @@
                                                         $fila = $fila + 1;  //incrementador contador de filas
                                                         $idd =  strval($row[0]); // guardar dato tipo string mediante castin
                                                                                  // para enviar a otro modulo mediante post o get
+                                                        // los datos de los campos en Bd los almaceno en la variable $row
                                                     ?>
                                                 <tr>
                                                     <td><?= $fila ?></td>
@@ -84,14 +85,14 @@
                                                     <!-- TD BOTONES ver, editar y eliminar -->
                                                     <td>
                                                         <!--enviar a xxxx.php pero pasando el dato de id de bd mediante php-->
-                                                        <a href="detaPer.php?id=<?php echo $idd ?>" id="detallePersonal" class="btn btn-light border-success">
+                                                        <a href="detaPer.php?id=<?php echo $idd ?>" id="detallePersonal" class="btn btn-light border-success btn-outline-dark">
                                                             <img src="../includes/images/view.png" height="17">
                                                         </a>
                                                         </a><!-- utilizar funcion js para cofirmar accion -->
-                                                        <a href="editPer.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionEdit()" id="editarPersonal" class="btn btn-light border-success">
+                                                        <a href="editPer.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionEdit()" id="editarPersonal" class="btn btn-light border-success btn-outline-dark">
                                                             <img src="../includes/images/edit.png" height="17">
                                                         </a><!-- utilizar funcion js para cofirmar accion -->
-                                                        <a href="../dataBase/adminSis/delPer.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionDel()" id="delPersonal" class="btn btn-light border-success">
+                                                        <a href="../dataBase/adminSis/delPer.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionDel()" id="delPersonal" class="btn btn-light border-success btn-outline-dark">
                                                             <img src="../includes/images/delete.png" height="17">
                                                         </a>
                                                     </td>

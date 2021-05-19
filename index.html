@@ -1,7 +1,3 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
 <!DOCTYPE html>
 <html>
 
@@ -64,9 +60,9 @@
 						<div class="row align-items-center remember">
 							<input type="checkbox">Recordarme
 						</div>
-						<div class="form-group">
+						<div class="form-group float-right">
 							<!--Botones -->
-							<input type="submit" id="entrarSistema" value="Login" class="btn float-right login_btn">
+							<span class="btn btn-success" id="entrarSistema">Ingresar</span>  <!-- boton de entrar -->
 						</div>
 					</form>
 				</div>
@@ -82,46 +78,23 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Optional JavaScript; choose one of the two! -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<!-- Optional JavaScript y css alertify -->
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.12.0/build/css/alertify.css">
+	<script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>	
+
 </body>
 
 </html>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<!--cargo scrip de funciones js para llamar funciones y acciones en cada modulo-->
+<script src="index/js/funciones.js"></script>
 
-<!-- Script para funcion de evento click boton entrar -->
-
-<script type="text/javascript">  // creo el script de tipo texto
-	$(document).ready(function () {  // cargo la funcion
-		$('#entrarSistema').click(function () {  // asigno funcion click al boton Entrar utilizando #
-			if ($('#usuario').val() == "") {   // si el input usuario esta vacio
-				<div class="alert alert-primary" role="alert">
-					A simple primary alert—check it out!
-				</div>
-				// mensaje de alerta indicando que el campo esta vacio
-				return false;  // detener el if
-			} else if ($('#password').val() == "") {  // si el input de password esta vacio 
-				alertify.alert("Debes agregar la Contraseña").setHeader('<em> Titulo </em> ');  // mensaje de alerta indicando que el campo esta vacio
-				return false;  // detener el else if
-			}  // cierre funcion click
-
-			// crear paquete de datos para pasar al ajax
-			// cre una cadena y le paso los datos ingresados en los inputs de usuario y password
-
-			cadena = "usuario=" + $('#usuario').val() +   // le asigno los valores de #usuario a usuario
-				"&password=" + $('#password').val();  // asigno los valores de #password a pasword
-			// creo el ajax
-			$.ajax({
-				type: "POST", // defino el tipo POTS=ENVIO
-				url: "php/login.php",  // defino enviar los datos a  login.php
-				data: cadena,  // seleciono los datos empaquetados en cadena
-				success: function (r) { //  establesco que ejecutar con los datos recibidos en (r)
-					if (r == 1) {  // si los datos recibidos son iguales a 1
-						window.location = "adminSis/menuPpl.php";  // llevar a la pagina inicio.php
-					} else {  //sino
-						alertify.alert("Fallo al entrar :(").setHeader('<em> Titulo </em> ');	// mensaje de alerta para indicar el fallo.
-					}
-				} // cirre de funcion r
-			}); // cierre del ajax
-		});	// cierre del evento click
-	}); // cierre de la funcion
+<!--scrip para llamar funciones js -->
+<script>
+	$(document).ready(accionesIndex);
 </script>

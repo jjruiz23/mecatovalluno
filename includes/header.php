@@ -1,3 +1,6 @@
+<?php session_start();?> <!--creo una seccion para pasarlo mediante GET O POST-->
+<?php if(isset($_SESSION['user'])) { ?> <!--si existe un mensaje en session en "save_tast.php"-->
+                                    <!--llamar color de mensaje en "login.php"-->
 <!doctype html>
 <html lang="en">
 
@@ -42,7 +45,7 @@
               <!-- Boton de usuario y salir -->
               <li class="nav-item dropdown">
                 <a class="btn btn-outline-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <?php echo $user . " / " . $rol ?> ▼
+                  <?php echo $_SESSION['user'] . " / " . $_SESSION['clave'] ?> ▼
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" href="#">Salir</a></li>
@@ -59,3 +62,4 @@
   <p></p> <!-- Espacio inicial -->
 
   <!-- Fin Header -->
+  <?php session_unset(); } ?>     <!--Limpiar datos de session- para que solo aparezca cuando se llama -->

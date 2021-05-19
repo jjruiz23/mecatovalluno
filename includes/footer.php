@@ -62,6 +62,7 @@
           <a class="text-dark" href="https:www.google.com.co/">www.jjruiz.com</a>
         </div>
         <!-- Copyright -->
+
       </footer>
 
       <!-- Optional JavaScript; choose one of the two! -->

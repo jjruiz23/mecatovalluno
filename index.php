@@ -1,3 +1,5 @@
+<?php session_start();?> <!--creo una seccion para manejar variables $_SESSION-->
+
 <!DOCTYPE html>
 <html>
 
@@ -24,6 +26,17 @@
 </head>
 
 <body>
+
+	<!--mensaje de alerta de bootstrap e integrandolo con jquery-->
+         <?php if(isset($_SESSION['message'])) { ?> <!--si existe un mensaje en session en "login.php"-->                                    
+            <div class="alert alert-danger alert-dismissible fade show" role="alert-link">
+          		<?= $_SESSION['message'] ?>  <!--llamo el mensaje en seccion en "login.php"-->
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+         <?php session_unset(); } ?>     <!--Limpiar datos de session- para que solo aparezca cuando se llama -->
+
 	<div class="container">
 		<!-- contendor de columnas/filas -->
 		<div class="d-flex justify-content-center h-100">
@@ -44,25 +57,25 @@
 					</div>
 				</div>
 				<div class="card-body">
-					<form>
+					<form action="dataBase/login.php" method="POST">
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" class="form-control" id="usuario" name="" placeholder="Usario" autofocus>
+							<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usario" autofocus>
 						</div>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" class="form-control" id="password" name="" placeholder="Contraseña">
+							<input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
 						</div>
 						<div class="row align-items-center remember">
 							<input type="checkbox">Recordarme
 						</div>
 						<div class="form-group float-right">
 							<!--Botones -->
-							<span class="btn btn-success" id="entrarSistema">Ingresar</span>  <!-- boton de entrar -->
+							<button type="submit" class="btn btn-success" id="entrarSistema">Ingresar</button>  <!-- boton de entrar -->
 						</div>
 					</form>
 				</div>
@@ -85,14 +98,17 @@
 	<!-- Optional JavaScript y css alertify -->
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.12.0/build/css/alertify.css">
-	<script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>	
+	<script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>	
 
 </body>
 
 </html>
 
 <!--cargo scrip de funciones js para llamar funciones y acciones en cada modulo-->
-<script src="index/js/funciones.js"></script>
+<script src="js/funciones.js"></script>
 
 <!--scrip para llamar funciones js -->
 <script>

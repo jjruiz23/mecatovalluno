@@ -25,7 +25,7 @@ function accionesIndex(){      // se crea funcion de js
 			// creo el ajax
 			$.ajax({
 				type: "POST", // defino el tipo POTS=ENVIO
-				url: "../dataBase/adminSis/regisPerAjax.php",  // defino enviar los datos a  login.php
+				url: "../dataBase/adminSis/login.php",  // defino enviar los datos a  login.php
 				data: cadena,  // seleciono los datos empaquetados en cadena
 				success: function (r) { //  establesco que ejecutar con los datos recibidos en (r)
 					if (r == 1) {  // si los datos recibidos son iguales a 1

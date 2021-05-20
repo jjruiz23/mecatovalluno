@@ -24,7 +24,7 @@
       <div class="card text-center">
 
         <div id="cnt-info" class="alert-alert-info">
-          <h3>Administrador de sistema</h3>
+          <h3>Menu director de Sede</h3>
         </div>
       
       </div>

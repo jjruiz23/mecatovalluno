@@ -1,3 +1,9 @@
+<?php // inicio lineas php
+	session_start(); //creo una seccion para pasarlo mediante GET O POST
+
+	if(isset($_SESSION['user'])){ // si la seecion esta definida desde login.php
+ ?>  <!-- cierro lineas php -->
+
 <!-- solicito el header -->
 <?php include("../includes/header.php") ?>
 
@@ -152,3 +158,9 @@
 <script>
   $(document).ready(accionesAdminSis);
 </script>
+
+<?php // inicio lineas php
+} else {  // si la seccion no esta definida
+	header("location:../index.php"); // forzamos el envio a la pagina index.php
+	}
+ ?>

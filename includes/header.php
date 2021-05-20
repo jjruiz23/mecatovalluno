@@ -1,6 +1,4 @@
-<?php session_start();?> <!--creo una seccion para pasarlo mediante GET O POST-->
-<?php if(isset($_SESSION['user'])) { ?> <!--si existe un mensaje en session en "save_tast.php"-->
-                                    <!--llamar color de mensaje en "login.php"-->
+                   
 <!doctype html>
 <html lang="en">
 
@@ -20,10 +18,6 @@
 <body>
 
   <p></p> <!-- Espacio inicial -->
-  <?php
-  $user = "julian";
-  $rol = "administrador";
-  ?>
 
   <!-- Header -->
   <div class="container">    <!-- contendor de columnas/filas -->
@@ -45,10 +39,11 @@
               <!-- Boton de usuario y salir -->
               <li class="nav-item dropdown">
                 <a class="btn btn-outline-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <?php echo $_SESSION['user'] . " / " . $_SESSION['clave'] ?> ▼
+                  <?php echo $_SESSION['user'] . " / " . $_SESSION['nomPrmiso'] ?> ▼
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Salir</a></li>
+                  <!-- boton para borrar datos de variables de $_SESSION_star y controlar acceso a modulos -->
+                  <li><a class="dropdown-item" href="../dataBase/salir.php">Salir</a></li>
                 </ul>
               </li>
             </span>
@@ -62,4 +57,3 @@
   <p></p> <!-- Espacio inicial -->
 
   <!-- Fin Header -->
-  <?php session_unset(); } ?>     <!--Limpiar datos de session- para que solo aparezca cuando se llama -->

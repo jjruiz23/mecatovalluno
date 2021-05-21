@@ -94,9 +94,13 @@
                                                         <a href="editCliente.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionEdit()" id="editarCliente" class="btn btn-light border-success btn-outline-dark">
                                                             <img src="../includes/images/edit.png" height="17">
                                                         </a><!-- utilizar funcion js para cofirmar accion -->
+                                                        <?php // inicio lineas php
+                                                        if($idPrmiso =="1"){ // si el permiso es igual a x muestre boton
+                                                        ?>  <!-- cierro lineas php -->
                                                         <a href="../dataBase/adminSis/delCliente.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionDel()" id="delCliente" class="btn btn-light border-success btn-outline-dark">
                                                             <img src="../includes/images/delete.png" height="17">
                                                         </a>
+                                                        <?php } ?> <!-- control de boton con permiso -->
                                                     </td>
                                                 </tr>
                                                 <?php }  // cierro el array con los datos de la consulta para mostrar dentro del tbody

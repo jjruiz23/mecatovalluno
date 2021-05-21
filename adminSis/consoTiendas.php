@@ -37,9 +37,13 @@
             <div class="card">
                 <h5 class="card-header">Consolidado Tiendas</h5>  <!--titulo -->
                 <div class="card-body">
+                    <?php // inicio lineas php
+                    if($idPrmiso =="1"){ // si el permiso es igual a x muestre boton
+                    ?>  <!-- cierro lineas php -->
                     <a href="crearPais.php" class="btn btn-outline-success" >Crear Pais</a> <!--boton -->
                     <a href="crearCiudad.php" class="btn btn-outline-success">Crear Ciudad</a> <!--boton -->
                     <a href="crearSede.php" class="btn btn-outline-success">Crear Sede</a> <!--boton -->
+                    <?php } ?> <!-- control de boton con permiso -->
 
                     <p></p> <!-- espacio entre botones superiores y contenedor de resultado -->
 

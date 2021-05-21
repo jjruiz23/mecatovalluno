@@ -36,13 +36,15 @@
 			//header('Location:../adminSis/menuPpl.php');	// redireccione al siguiente modulo
 			$_SESSION['user']=$usuario;   //se almacenan los datos de $usuario en la seccion ['user']
            	$_SESSION['nomPrmiso']=$nomPermiso;   //se almacenan los datos de $usuario en la seccion ['idPrmiso']
+           	$_SESSION['idPrmiso']=$idPrmiso;   //se almacenan los datos de $usuario en la seccion ['idPrmiso']
+			   
 			// IF(s) para control de secciones por permiso
 			if($idPrmiso == "1"){	// si el id del persmiso es x redirigir a x modulo
 				header('Location:../adminSis/menuPpl.php');	// redireccione al siguiente modulo
 			}elseif($idPrmiso == "2"){
-				header('Location:../direcSede/menuPpl.php');	// redireccione al siguiente modulo
+				header('Location:../adminSis/menuPpl2.php');	// redireccione al siguiente modulo
 			}elseif($idPrmiso == "3"){
-				header('Location:../vendedor/menuPpl.php');	// redireccione al siguiente modulo
+				header('Location:../adminSis/menuPpl3.php');	// redireccione al siguiente modulo
 			} // else if
 		}	//while
 		}else{  // sino

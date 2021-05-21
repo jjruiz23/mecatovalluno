@@ -23,8 +23,9 @@
                 Cliente
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="../dataBase/adminSis/delPer.php">prueba</a></li>
-                <li><a class="dropdown-item" href="#">Buscar</a></li>
+                <li><a class="dropdown-item" href="crearCliente.php">Crear</a></li>
+                <li><a class="dropdown-item" href="" id="btnBuscarCliente">Buscar</a></li>
+                <li><a class="dropdown-item" href="consoClientes.php">Consolidado</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">

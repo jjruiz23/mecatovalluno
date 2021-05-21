@@ -15,13 +15,13 @@ var_dump($_GET["buscador"]?? '');
 //var_dump($_POST['buscador']);
 $buscador = $_GET['buscador'];  //capturar variable enviada al modulo
 
-$sql = "SELECT  p.idPer, p.nombres, p.apellidos, td.nomTipoDoc, p.numDocumento,	p.celular, s.nomSede, r.nomRol
-			FROM personal p
-			INNER JOIN tipodoc td ON p.idTipoDoc = td.idTipoDoc
-			INNER JOIN sede s ON p.idSede = s.idSede
-			LEFT JOIN rol_x_personal rp ON p.idPer = rp.idPer
-			LEFT JOIN rol r ON r.idRol = rp.idRol
-			WHERE numDocumento LIKE '$buscador'";
+$sql = "SELECT  c.idCliente, c.nomCliente, c.apeCliente, td.nomTipoDoc, c.numDocCliente, c.celCliente,
+            c.emailCliente, DATE(c.fechaNacCliente), ec.nomEstCivil, c.telCliente, c.direCliente,
+            c.idTipoDoc, c.idEstCivil
+            FROM clientes c
+            INNER JOIN tipodoc td ON c.idTipoDoc = td.idTipoDoc
+            INNER JOIN estadocivil ec ON c.idEstCivil = ec.idEstCivil
+            WHERE numDocCliente LIKE '$buscador'";
 		/* selecionar los campos
 		desde la tabla importante
 		uniendo la tabla x con campos iguales osea primarykey & forean

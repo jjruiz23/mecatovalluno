@@ -89,12 +89,26 @@ $idPrmiso = $_SESSION['idPrmiso'];
                 <?php // inicio lineas php
                     if($idPrmiso =="1"){ // si el permiso es igual a x muestre boton
                 ?>  <!-- cierro lineas php -->
-                <li><a class="dropdown-item" href="crearProducto.php">Crear Producto</a></li>
+                <li><a class="dropdown-item" href="crearProducto.php">Crear</a></li>
                 <?php } ?> <!-- control de boton con permiso -->
-                <li><a class="dropdown-item" href="" id="btnBuscarProducto">Buscar Producto</a></li>                
+                <li><a class="dropdown-item" href="" id="btnBuscarProducto">Buscar</a></li>                
                 <li><a class="dropdown-item" href="consoProducto.php">Consolidado</a></li>
               </ul>
               <?php } ?> <!-- control de boton con permiso -->
+
+              <li class="nav-item dropdown">
+              <?php // inicio lineas php
+                  if($idPrmiso =="1" || $idPrmiso =="2" || $idPrmiso =="3"){ // si el permiso es igual a x muestre boton
+              ?>  <!-- cierro lineas php -->
+              <a class="btn btn-outline-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Facturas
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">                
+                <li><a class="dropdown-item" href="crearFactura.php">Crear</a></li>
+                <li><a class="dropdown-item" href="consoFactura.php">Consolidado</a></li>
+              </ul>
+              <?php } ?> <!-- control de boton con permiso -->
+
           </form>
         </nav>
 

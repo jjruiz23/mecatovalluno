@@ -18,11 +18,12 @@
 			
 			// creo la variable $sql
 			//selecciono todo en la tabla usuario y campo de tabla permisos donde las variables $ creadas deben ser iguals a los campos de la tabla (campo='$variable')
-		$sql="SELECT u.nomUusuarios, u.passwd, u.idPermiso, p.nomPermiso
+		$sql="SELECT u.nomUusuarios, u.passwd, u.idPermiso, p.nomPermiso, u.idUsus
 			FROM usuario u
 			INNER JOIN permisos p ON u.idPermiso = p.idPermiso
-			WHERE nomUusuarios='$usuario' AND passwd='$pass'";  
-			// creo variable $result y le asigno los valores de $conexion y $sql
+			WHERE nomUusuarios='$usuario' AND passwd='$pass'";
+
+		// creo variable $result y le asigno los valores de $conexion y $sql
 		$result1=mysqli_query($conexion,$sql);		//la funcion mysqli_query devulve un valor mayor a 0 si encuentra resultado de $sql en $conexion
 		
 		if(mysqli_num_rows($result1) > 0){	//si el resultado de las filas es mayor a 0 en la variabel $result			
@@ -36,8 +37,9 @@
 			//header('Location:../adminSis/menuPpl.php');	// redireccione al siguiente modulo
 			$_SESSION['user']=$usuario;   //se almacenan los datos de $usuario en la seccion ['user']
            	$_SESSION['nomPrmiso']=$nomPermiso;   //se almacenan los datos de $usuario en la seccion ['idPrmiso']
-           	$_SESSION['idPrmiso']=$idPrmiso;   //se almacenan los datos de $usuario en la seccion ['idPrmiso']
-			   
+           	$_SESSION['idUsus']=$idUsus;   //se almacenan los datos de $usuario en la seccion ['idPrmiso']
+			$_SESSION['idPrmiso']=$idPrmiso;   //se almacenan los datos de $usuario en la seccion ['idPrmiso']
+			 
 			// IF(s) para control de secciones por permiso
 			if($idPrmiso == "1"){	// si el id del persmiso es x redirigir a x modulo
 				header('Location:../adminSis/menuPpl.php');	// redireccione al siguiente modulo
@@ -53,6 +55,21 @@
 			$_SESSION['message'] = 'Usuario no EXISTE !!!'; // guardo mensaje para imprimir en index.php
     		//$_SESSION['mesagge_type'] = 'danger';   // guardo colo de mensaje para imprimir en index.php
 		}//else
+
+		// consulta para separar el nombre del personal para variable seccion
+		$sqlPer="SELECT idPer, nombres, apellidos FROM personal ORDER BY 1 ASC";
+		// creo variable $result y le asigno los valores de $conexion y $sql
+		$result2=mysqli_query($conexion,$sqlPer);		//la funcion mysqli_query devulve un valor mayor a 0 si encuentra resultado de $sql en $conexion
+		
+		if(mysqli_num_rows($result2) > 0){	//si el resultado de las filas es mayor a 0 en la variabel $result			
+			echo $mensaje1; // para pruebas
+			// separo la tupla de datos del resultado del query, en las variables $row para poderla manipular
+			while ($row = mysqli_fetch_row($result2)){
+				$idPersonal = strval($row[0]);
+				$_SESSION['idPersonal']=$idPersonal;   //se almacenan los datos de $usuario en la seccion ['idPrmiso']
+			}
+		}
+
 
 		mysqli_free_result($result1); // libera espacio en memoria.
 		mysqli_close($conexion);	// cierro conexion

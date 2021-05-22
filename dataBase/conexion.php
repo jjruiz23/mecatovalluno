@@ -3,9 +3,9 @@
 function conexion() // inicio funcion conexion()
 {
     $db_host = "localhost";
-    $db_user = "root";
-    $db_pass = "";
-    $db_name = "pruebas2";
+    $db_user = "pruebamv5";
+    $db_pass = "Dolby2323";
+    $db_name = "pruebamv5";
 
     return $conexion = new mysqli($db_host, $db_user, $db_pass, $db_name); //determino los parametros de conexion y retorno el resultado
 

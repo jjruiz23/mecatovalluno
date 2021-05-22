@@ -38,6 +38,7 @@
                 <div class="card-body">
                     <a href="crearProducto.php" class="btn btn-outline-success">Crear</a>    <!--boton -->
                     <a href="buscProductoResul.php" class="btn btn-outline-success">Buscar</a>     <!--boton -->
+                    <a href="crearFactura.php" class="btn btn-outline-primary">Crear Factura</a>     <!--boton -->
                     
                     <p></p> <!-- espacio entre botones superiores y contenedor de resultado -->
 
@@ -88,13 +89,13 @@
                                                     <td>
                                                         <!--enviar a xxxx.php pero pasando el dato de id de bd mediante php-->
                                                         <!-- utilizar funcion js para cofirmar accion -->
-                                                        <a href="editProducto.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionEdit()" id="editarCliente" class="btn btn-light border-success btn-outline-dark">
+                                                        <a href="editProducto.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionEdit()" id="editarProducto" class="btn btn-light border-success btn-outline-dark">
                                                             <img src="../includes/images/edit.png" height="17">
                                                         </a><!-- utilizar funcion js para cofirmar accion -->
                                                         <?php // inicio lineas php
                                                         if($idPrmiso =="1"){ // si el permiso es igual a x muestre boton
                                                         ?>  <!-- cierro lineas php -->
-                                                        <a href="../dataBase/adminSis/delProducto.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionDel()" id="delCliente" class="btn btn-light border-success btn-outline-dark">
+                                                        <a href="../dataBase/adminSis/delProducto.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionDel()" id="delProducto" class="btn btn-light border-success btn-outline-dark">
                                                             <img src="../includes/images/delete.png" height="17">
                                                         </a>
                                                         <?php } ?> <!-- control de boton con permiso -->

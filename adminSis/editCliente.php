@@ -32,7 +32,6 @@
         <p></p>
         <h5 class="card-title">Editar Cliente</h5>
 
-        <!-- <form id="frmRegistro" action="../adminSis/editPer.php?id=<?php echo $_GET['id']; ?>" method="POST"> -->
         <form id="frmRegistro">
           <!-- solicito el query con los datos de consulta para mostrar y porteriormente editar -->
           <!-- y mediante php imprimirlos en los inputs y selects -->
@@ -60,7 +59,7 @@
             </div>
             <div class="col-sm-1">
               <!-- INPUT se muestra el valor de la variable -->
-              <input type="hidden" disabled value="<?php echo $c_idCliente;?>" class="form-control" id="idPer" required>
+              <input type="hidden" disabled value="<?php echo $c_idCliente;?>" class="form-control" id="idCli" required>
             </div>
           </div>
           <p></p>
@@ -121,7 +120,7 @@
           </div>
           <p></p>
           <!-- botones formulario -->
-          <a type="#" id="actualizarCliente" name="actualizarPersonal" class="btn btn-success">Actualizar Datos</a type="#">
+          <a type="#" id="actualizarCliente" name="actualizarCliente" class="btn btn-success">Actualizar Datos</a type="#">
           <a type="#" id="restaurarCampos" class="btn btn-primary">Restaurar Datos</a>
           </form>
         </div>  <!--card-body-->

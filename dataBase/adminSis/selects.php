@@ -20,8 +20,10 @@
     $resultadoTipoDoc = mysqli_query($conexion, "SELECT * FROM tipodoc ORDER BY 1 ASC;");
     // select para mostrar datos de tabla ESTADO CIVIL
     $resultadoEstCivil = mysqli_query($conexion, "SELECT * FROM estadocivil ORDER BY 1 ASC;");
-    // select para mostrar datos de tabla ESTADO CIVIL
+    // select para mostrar datos de tabla SALARIOS
     $resultadoSalarios = mysqli_query($conexion, "SELECT * FROM salarios ORDER BY 1 ASC;");
+    // select para mostrar datos de tabla CATEGORIA
+    $resultadoCategoria = mysqli_query($conexion, "SELECT * FROM categoria ORDER BY 1 ASC;");
     
 
 ?>

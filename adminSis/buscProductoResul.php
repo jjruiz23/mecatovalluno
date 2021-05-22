@@ -34,24 +34,24 @@
 
             <!-- card con informacion del modulo -->
             <div class="card">
-                <h5 class="card-header">Buscar Clientes</h5>
+                <h5 class="card-header">Buscar Producto</h5>
                 <!--titulo -->
                 <div class="card-body">
                     <p></p>
                     <!-- Primer fila de inputs -->
                     <div class="row g-3">
                         <div class="col-sm-2 col-md-2 col-xs-2">
-                            <a href="crearCliente.php" class="btn btn-outline-success">Crear</a>
-                            <a href="consoClientes.php" class="btn btn-outline-success">Consolidado</a>
+                            <a href="crearProducto.php" class="btn btn-outline-success">Crear</a>
+                            <a href="consoProducto.php" class="btn btn-outline-success">Consolidado</a>
                             <!--boton -->
                         </div>
                         <div class="col-sm">
                         </div>
                         <div class="col-sm-4 col-md-4 col-xs-4">
-                            <form action="../adminSis/buscClienteResul.php" method="GET" id="respuesta">
+                            <form action="../adminSis/buscProductoResul.php" method="GET" id="respuesta">
                                 <!-- recargo pagina con el resultado del query -->
                                 <input type="text" style="text-align:center" name="buscador" id="buscador" placeholder="Ingrese ID"> <!-- input captura de datos-->
-                                <button type="submit" class="btn btn-success" id="buscarCli"> Buscar </button> <!-- boton para activar formulario -->
+                                <button type="submit" class="btn btn-success" id="buscarPro"> Buscar </button> <!-- boton para activar formulario -->
                             </form>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
 
                                     <?php  // inicio lineas php
 
-                                    include '../dataBase/buscadorCliente.php'; // invoco el query en buscadorPer.php
+                                    include '../dataBase/buscadorProducto.php'; // invoco el query en buscadorPer.php
 
                                     //entonces obtenga un array con los datos de la variable $result proveniente de cbrrador2.php
                                     while ($row = mysqli_fetch_array($result)) {
@@ -89,11 +89,11 @@
                                                     <tr class="table-dark">
                                                         <!-- encabezados de tabla -->
                                                         <th>Fila</th>                                                        
-                                                        <th>Tipo Doc</th>
-                                                        <th>Numero Doc</th>
-                                                        <th>Nombres</th>
-                                                        <th>Apellidos</th>
-                                                        <th>Celular</th>                                                  
+                                                        <th>Nombre Prod</th>
+                                                        <th>Codigo Prod</th>
+                                                        <th>Categoria Prod</th>
+                                                        <th>Precio Prod</th>
+                                                        <th>Fecha Creacion</th>
                                                         <th>Acciones</th>
                                                     </tr>
                                                 </thead>
@@ -101,29 +101,26 @@
                                                 <tr>
                                                     <!-- mostrar filas con los resultados -->
                                                     <td><?= $fila ?></td> <!-- imprimir el dato mediante la variable $row de $result -->
-                                                    <td><?= $row[3] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
-                                                    <td><?= $row[4] ?></td> <!-- o por la posicion dada en el query de consutlta -->
-                                                    <td><?= $row[1] ?></td> <!-- imprimir el dato mediante la variable $row de $result -->
-                                                    <td><?= $row[2] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
-                                                    <td><?= $row[5] ?></td> <!-- o por la posicion dada en el query de consutlta -->
+                                                    <td><?= $row[1] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
+                                                    <td><?= $row[2] ?></td> <!-- o por la posicion dada en el query de consutlta -->
+                                                    <td><?= $row[3] ?></td> <!-- imprimir el dato mediante la variable $row de $result -->
+                                                    <td><?= $row[4] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
+                                                    <td><?= $row[5] ?></td> <!-- se puede indicar mediante el nombre del indice de la tabla de bd -->
                                                     <!-- TD BOTONES edit and delete -->
                                                     <td>
                                                         <!--enviar a xxxx.php pero pasando el dato de id de bd mediante php-->
-                                                        <a href="detaCliente.php?id=<?php echo $idd ?>" id="detalleCliente" class="btn btn-light border-success btn-outline-dark">
-                                                            <img src="../includes/images/view.png" height="17">
-                                                        </a>
-                                                        </a><!-- utilizar funcion js para cofirmar accion -->
-                                                        <a href="editCliente.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionEdit()" id="editarCliente" class="btn btn-light border-success btn-outline-dark">
+                                                        <!-- utilizar funcion js para cofirmar accion -->
+                                                        <a href="editProducto.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionEdit()" id="editarCliente" class="btn btn-light border-success btn-outline-dark">
                                                             <img src="../includes/images/edit.png" height="17">
                                                         </a><!-- utilizar funcion js para cofirmar accion -->
                                                         <?php // inicio lineas php
                                                         if($idPrmiso =="1"){ // si el permiso es igual a x muestre boton
                                                         ?>  <!-- cierro lineas php -->
-                                                        <a href="../dataBase/adminSis/delCliente.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionDel()" id="delCliente" class="btn btn-light border-success btn-outline-dark">
+                                                        <a href="../dataBase/adminSis/delProducto.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionDel()" id="delCliente" class="btn btn-light border-success btn-outline-dark">
                                                             <img src="../includes/images/delete.png" height="17">
                                                         </a>
                                                         <?php } ?> <!-- control de boton con permiso -->
-                                                    </td> <!-- TD BOTONES edit and delete -->
+                                                    </td>
                                                 </tr>
                                             </table>
                                         </div>

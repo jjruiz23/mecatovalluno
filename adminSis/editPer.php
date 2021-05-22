@@ -32,7 +32,6 @@
         <p></p>
         <h5 class="card-title">Editar Empleado</h5>
 
-        <!-- <form id="frmRegistro" action="../adminSis/editPer.php?id=<?php echo $_GET['id']; ?>" method="POST"> -->
         <form id="frmRegistro">
           <!-- solicito el query con los datos de consulta para mostrar y porteriormente editar -->
           <!-- y mediante php imprimirlos en los inputs y selects -->

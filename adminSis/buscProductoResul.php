@@ -34,15 +34,14 @@
 
             <!-- card con informacion del modulo -->
             <div class="card">
-                <h5 class="card-header">Buscar Producto</h5>
+                <h5 class="card-header">Buscar Item Inventario</h5>
                 <!--titulo -->
                 <div class="card-body">
                     <p></p>
                     <!-- Primer fila de inputs -->
                     <div class="row g-3">
                         <div class="col-sm-2 col-md-2 col-xs-2">
-                            <a href="crearProducto.php" class="btn btn-outline-success">Crear</a>
-                            <a href="consoProducto.php" class="btn btn-outline-success">Consolidado</a>
+                            <a href="consoInvProd.php" class="btn btn-outline-success">Consolidado</a>
                             <!--boton -->
                         </div>
                         <div class="col-sm">
@@ -110,13 +109,13 @@
                                                     <td>
                                                         <!--enviar a xxxx.php pero pasando el dato de id de bd mediante php-->
                                                         <!-- utilizar funcion js para cofirmar accion -->
-                                                        <a href="editProducto.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionEdit()" id="editarCliente" class="btn btn-light border-success btn-outline-dark">
+                                                        <a href="editProducto.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionEdit()" id="editarProducto" class="btn btn-light border-success btn-outline-dark">
                                                             <img src="../includes/images/edit.png" height="17">
                                                         </a><!-- utilizar funcion js para cofirmar accion -->
                                                         <?php // inicio lineas php
                                                         if($idPrmiso =="1"){ // si el permiso es igual a x muestre boton
                                                         ?>  <!-- cierro lineas php -->
-                                                        <a href="../dataBase/adminSis/delProducto.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionDel()" id="delCliente" class="btn btn-light border-success btn-outline-dark">
+                                                        <a href="../dataBase/adminSis/delProducto.php?id=<?php echo $idd ?>" onclick="return ConfirmarAccionDel()" id="delProducto" class="btn btn-light border-success btn-outline-dark">
                                                             <img src="../includes/images/delete.png" height="17">
                                                         </a>
                                                         <?php } ?> <!-- control de boton con permiso -->

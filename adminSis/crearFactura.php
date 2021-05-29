@@ -16,6 +16,21 @@
 
 <p></p> <!--espacio entre menu y contenido-->
 
+<?php if(isset($_SESSION['messageFact'])) { ?> <!--si existe un mensaje en session en "preFactura.php"--> 
+  <div class="container"> <!-- contendor de columnas/filas -->
+    <div class="row-justify"> <!-- distribuidor de columnas/filas -->
+      <div class="col-sm-12 col-xs-12"> <!-- tamaños de distribucion de columnas/filas -->
+
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          		<?= $_SESSION['messageFact'] ?>  <!--llamo el mensaje en seccion en "login.php"-->
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+      </div><!-- col-sm -->
+    </div> <!-- row-justify -->
+  </div> <!-- container -->
+<?php unset($_SESSION['messageFact']); } ?>     <!--Limpiar datos de session para que solo aparezca cuando se llama -->
+
 <!-- CONTENIDO DEL MODULO -->
 
 <!--container formulario-->
@@ -29,9 +44,11 @@
         <div class="card-body">
         <form id="frmRegistro" name="frmRegistro" action="preFactura.php" method="POST">
 
+<?php //var_dump($_SESSION['idPer']?? '');	// prueba de fucnionamiento ?>
+
           <a href="buscFacturaResul.php" class="btn btn-outline-success" >Buscar</a> <!--boton -->
           <a href="consoFactura.php" class="btn btn-outline-success">Consolidado</a> <!--boton -->
-          <a href="consoProducto.php" class="btn btn-outline-primary">Lista de productos</a> <!--boton -->
+          <!--<a href="consoProducto.php" class="btn btn-outline-primary">Lista de productos</a> boton -->
           <p></p>
           <h5 class="card-title">Factura Nueva</h5>
           <!-- Primer fila de inputs -->
@@ -42,8 +59,10 @@
             <div class="col-sm-2">
             <?php include '../dataBase/adminSis/selects.php';  
                  if ($resultadoOrdenFactura): ?>
-              <?php while ($rowy = mysqli_fetch_array($resultadoOrdenFactura)): ?>           
-              <input  type="text" disabled class="form-control" id="numFactura" value="factura  #  <?php echo $rowy[0] ?>" required>
+              <?php while ($rowy = mysqli_fetch_array($resultadoOrdenFactura)): ?>
+              <?php $numFactura = intval($rowy[0]) + 1 ;
+              ?>         
+              <input  type="text" disabled class="form-control" id="numFactura" value="factura  #  <?php echo $numFactura ?>" required>
               <?php endwhile; ?>
               <?php endif ?>
             </div>
@@ -51,31 +70,20 @@
               <!-- solicito la conexion y el query para mostrar datos de tabla en select -->
               <?php include '../dataBase/adminSis/selects.php';  
                  if ($resultadoCliente): ?>
-                <select class="form-select" name="cliente" id="cliente" autofocus>  <!-- select que captura los option value -->
+                <select class="form-select" name="idCliente" id="idCliente" autofocus>  <!-- select que captura los option value -->
                   <option value="" selected="Elegir...">Elija un Cliente &nbsp (si no existe, primero crear) &nbsp ... </option>                  
                   <?php while ($rowy = mysqli_fetch_array($resultadoCliente)): ?>
-	                  <<option value ="<?php echo $rowy[0] ?>"><?php echo $rowy[2]," "?><?php echo $rowy[1]," - "?><?php echo $rowy[3]," : "?><?php echo $rowy[4]," "?></option>
+	                  <option value ="<?php echo $rowy[0] ?>"><?php echo $rowy[2]," "?><?php echo $rowy[1]," - "?><?php echo $rowy[3]," : "?><?php echo $rowy[4]," "?></option>
+                    <?php //$_SESSION['nomCliente'] = $rowy[2]." ".$rowy[1];  ?>
 	                <?php endwhile; ?>
                 </select>
               <?php endif ?>
-            </div>            
-            <div class="col-sm-2">
-              <!-- solicito la conexion y el query para mostrar datos de tabla en select -->
-              <?php include '../dataBase/adminSis/selects.php';  
-                 if ($resultadoSede): ?>
-                <select class="form-select" name="sede" id="sede" autofocus>  <!-- select que captura los option value -->
-                  <option value="" selected="Elegir...">Elija la Sede &nbsp ... </option>                  
-                  <?php while ($rowy = mysqli_fetch_array($resultadoSede)): ?>
-	                  <option value ="<?php echo $rowy[0] ?>"><?php echo $rowy[1] ?></option>
-	                <?php endwhile; ?>
-                </select>
-              <?php endif ?> 
-            </div>
+            </div>   
             <div class="col-sm-1">
             <?php include '../dataBase/adminSis/selects.php';  // para capturar valor de idPERSONAL
                  if ($resultadoPesonalFact): ?>
               <?php while ($rowy = mysqli_fetch_array($resultadoPesonalFact)): ?>           
-              <input  type="text" disabled class="form-control" id="idPer" name="idPer" value="<?php echo $rowy[0] ?>" required>
+              <input  type="text" hidden class="form-control" id="idPer" name="idPer" value="<?php echo $rowy[0]; ?>" required>
               <?php endwhile; ?>
               <?php endif ?>
             </div>
@@ -84,19 +92,19 @@
           <!-- Segunda fila de inputs --> 
           <div class="row g-3">
             <h5 class="card-title">Productos</h5>
-            <div class="col-sm-2">
+            <div class="col-sm-4">
             <?php include '../dataBase/adminSis/selects.php';  
                  if ($resultadoProducto): ?>
                 <select class="form-select" name="idProducto" id="idProducto" autofocus>  <!-- select que captura los option value -->
                   <option value="" selected="Elegir...">Elija el producto &nbsp ... </option>                  
                   <?php while ($rowy = mysqli_fetch_array($resultadoProducto)): ?>
-	                  <option value ="<?php echo $rowy[0] ?>"><?php echo $rowy[1] ?></option>
+	                  <option value ="<?php echo $rowy[0] ?>"><?php echo $rowy[1] ?><?php echo " : $ ". $rowy[4] ?><?php echo "  -  Cant : ". $rowy[5] ?></option>
+                    <?php //$_SESSION['nomProducto'] = $rowy[1]. " : $ ".$rowy[4] ; ?> <!-- contateno nombre y valor en variable session -->
+                    <?php //$_SESSION['precProducto'] = $rowy[4] ; ?> <!-- extraigo dato de precio y almaceno valor en variable session -->
                   <?php endwhile; ?>
                 </select>
+               
                 <?php endif ?>
-            </div>
-            <div class="col-sm-2">
-              <input type="number"  class="form-control" id="preProducto" name="preProducto" placeholder="Precio Producto" required>
             </div>
             <div class="col-sm-2">
               <input type="number"  class="form-control" id="cantidad" name="cantidad" placeholder="cantidad" required>

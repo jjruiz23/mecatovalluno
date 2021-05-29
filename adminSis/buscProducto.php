@@ -12,7 +12,7 @@
         <div class="row g-3">
             <div class="col-sm-2 col-md-2 col-xs-2">
                 <a href="crearPoducto.php" class="btn btn-outline-success">Crear</a>
-                <a href="consoProducto.php" class="btn btn-outline-success">Consolidado</a>
+                <a href="consoInvProd.php" class="btn btn-outline-success">Consolidado</a>
                 <!--botones -->
             </div>
             <div class="col-sm">

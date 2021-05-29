@@ -25,7 +25,7 @@
 
       <!-- card con informacion del modulo -->
       <div class="card">
-        <h5 class="card-header">Productos</h5> <!--titulo -->
+        <h5 class="card-header">Materia Prima</h5> <!--titulo -->
         <div class="card-body">
         <form id="frmRegistro">
 
@@ -40,7 +40,7 @@
               <?php include '../dataBase/adminSis/selects.php';  
                  if ($resultadoCategoria): ?>
                 <select class="form-select" name="categoria" id="categoria" autofocus>  <!-- select que captura los option value -->
-                  <option value="" selected="Elegir...">Elija la categoria del producto &nbsp ... </option>                  
+                  <option value="" selected="Elegir...">Elija la categoria &nbsp ... </option>                  
                   <?php while ($rowy = mysqli_fetch_array($resultadoCategoria)): ?>
 	                  <option value ="<?php echo $rowy[0] ?>"><?php echo $rowy[1] ?></option>
 	                <?php endwhile; ?>
@@ -48,19 +48,19 @@
               <?php endif ?>
             </div>
             <div class="col-sm-4">
-              <input type="text" class="form-control" id="codiProducto" placeholder="codigo Producto" value="" required>
+              <input type="text" class="form-control" id="codiProducto" placeholder="codigo Mat. Prima" value="" required>
             </div>
           </div>
           <p></p>
           <!-- Segunda fila de inputs --> 
           <div class="row g-3">   
             <div class="col-sm-4">
-              <input type="text" class="form-control" id="nomProducto" placeholder="Nombre Producto" value="" required>
+              <input type="text" class="form-control" id="nomProducto" placeholder="Nombre Mat. Prima" value="" required>
             </div>
             <div class="col-sm-2">
-              <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="preProducto" placeholder="Precio Producto" value="" required>
+              <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="preProducto" placeholder="Precio Mat. Prima" value="" required>
             </div><div class="col-sm-2">
-              <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="cantProducto" placeholder="Unidades Producto" value="" required>
+              <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="cantProducto" placeholder="Unidades Mat. Prima" value="" required>
             </div>
           </div>
 

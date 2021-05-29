@@ -18,9 +18,10 @@
 			
 			// creo la variable $sql
 			//selecciono todo en la tabla usuario y campo de tabla permisos donde las variables $ creadas deben ser iguals a los campos de la tabla (campo='$variable')
-		$sql="SELECT u.nomUusuarios, u.passwd, u.idPermiso, p.nomPermiso, u.idUsus
+		$sql="SELECT u.nomUusuarios, u.passwd, u.idPermiso, p.nomPermiso, u.idUsus, u.idPer
 			FROM usuario u
 			INNER JOIN permisos p ON u.idPermiso = p.idPermiso
+			INNER JOIN personal pr ON u.idPer = pr.idPer
 			WHERE nomUusuarios='$usuario' AND passwd='$pass'";
 
 		// creo variable $result y le asigno los valores de $conexion y $sql
@@ -32,6 +33,7 @@
 			while ($row = mysqli_fetch_row($result1)){
 				$idPrmiso = strval($row[2]);	// castin para convertir dato de tabla en variable
 				$nomPermiso = strval($row[3]);	// castin para convertir dato de tabla en variable
+				$idPerm = strval($row[5]);	// castin para convertir dato de tabla en variable
 				$mensaje1 = "SI funciono"; // para pruebas
 				$mensaje2 = "NO funciono"; // para pruebas
 			//header('Location:../adminSis/menuPpl.php');	// redireccione al siguiente modulo
@@ -39,6 +41,8 @@
            	$_SESSION['nomPrmiso']=$nomPermiso;   //se almacenan los datos de $usuario en la seccion ['idPrmiso']
            	$_SESSION['idUsus']=$idUsus;   //se almacenan los datos de $usuario en la seccion ['idPrmiso']
 			$_SESSION['idPrmiso']=$idPrmiso;   //se almacenan los datos de $usuario en la seccion ['idPrmiso']
+			$_SESSION['idPer']=$idPerm;   //se almacenan los datos de $usuario en la seccion ['idPrmiso']
+
 			 
 			// IF(s) para control de secciones por permiso
 			if($idPrmiso == "1"){	// si el id del persmiso es x redirigir a x modulo
@@ -55,7 +59,8 @@
 			$_SESSION['message'] = 'Usuario no EXISTE !!!'; // guardo mensaje para imprimir en index.php
     		//$_SESSION['mesagge_type'] = 'danger';   // guardo colo de mensaje para imprimir en index.php
 		}//else
-
+		
+// CREO QUE NO ES NECESARIO 28-MAY-2021
 		// consulta para separar el nombre del personal para variable seccion
 		$sqlPer="SELECT idPer, nombres, apellidos FROM personal ORDER BY 1 ASC";
 		// creo variable $result y le asigno los valores de $conexion y $sql

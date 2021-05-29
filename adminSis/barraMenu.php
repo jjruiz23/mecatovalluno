@@ -27,6 +27,19 @@ $idPrmiso = $_SESSION['idPrmiso'];
 
             <li class="nav-item dropdown">
               <?php // inicio lineas php
+                  if($idPrmiso =="1" || $idPrmiso =="2" || $idPrmiso =="3"){ // si el permiso es igual a x muestre boton
+              ?>  <!-- cierro lineas php -->
+              <a class="btn btn-outline-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Nomina
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="nominaPagar.php">Pagar / Consulta Pago</a></li>                
+                <li><a class="dropdown-item" href="consoNomina.php">Consolidado</a></li>
+              </ul>
+              <?php } ?> <!-- control de boton con permiso -->
+
+            <li class="nav-item dropdown">
+              <?php // inicio lineas php
                 if($idPrmiso =="1" || $idPrmiso =="2" || $idPrmiso =="3" ){ // si el permiso es igual a x muestre boton
               ?>  <!-- cierro lineas php -->
               <a class="btn btn-outline-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -72,6 +85,7 @@ $idPrmiso = $_SESSION['idPrmiso'];
                 <li><a class="dropdown-item" href="crearPais.php">Crear Pais</a></li>
                 <li><a class="dropdown-item" href="crearCiudad.php">Crear Ciudad</a></li>
                 <li><a class="dropdown-item" href="crearSede.php">Crear Sede</a></li>
+                <li><a class="dropdown-item" href="editarPaisCiudad.php">Editar Pais / Ciudad</a></li>
                 <?php } ?> <!-- control de boton con permiso -->
                 <li><a class="dropdown-item" href="consoTiendas.php">Consolidado</a></li>
               </ul>
@@ -80,19 +94,27 @@ $idPrmiso = $_SESSION['idPrmiso'];
 
             <li class="nav-item dropdown">
               <?php // inicio lineas php
+                  if($idPrmiso =="1" || $idPrmiso =="2"){ // si el permiso es igual a x muestre boton
+              ?>  <!-- cierro lineas php -->
+              <a class="btn btn-outline-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Gestion Produccion
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">                
+                <li><a class="dropdown-item" href="crearProducto.php">Crear Producto</a></li>
+                <li><a class="dropdown-item" href="crearMatPrima.php">Crear Materia Prima</a></li>
+              </ul>
+              <?php } ?> <!-- control de boton con permiso -->
+
+              <li class="nav-item dropdown">
+              <?php // inicio lineas php
                   if($idPrmiso =="1" || $idPrmiso =="2" || $idPrmiso =="3"){ // si el permiso es igual a x muestre boton
               ?>  <!-- cierro lineas php -->
               <a class="btn btn-outline-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Gestion Productos
+                Gestion Inventarios
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <?php // inicio lineas php
-                    if($idPrmiso =="1"){ // si el permiso es igual a x muestre boton
-                ?>  <!-- cierro lineas php -->
-                <li><a class="dropdown-item" href="crearProducto.php">Crear</a></li>
-                <?php } ?> <!-- control de boton con permiso -->
                 <li><a class="dropdown-item" href="" id="btnBuscarProducto">Buscar</a></li>                
-                <li><a class="dropdown-item" href="consoProducto.php">Consolidado</a></li>
+                <li><a class="dropdown-item" href="consoInvProd.php">Consolidado</a></li>
               </ul>
               <?php } ?> <!-- control de boton con permiso -->
 

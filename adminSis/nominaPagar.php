@@ -25,13 +25,13 @@
 
       <!-- card con informacion del modulo -->
       <div class="card">
-        <h5 class="card-header">Asignar Rol</h5> <!--titulo -->
+        <h5 class="card-header">Nomina</h5> <!--titulo -->
         <div class="card-body">
-        <form id="frmRegistro">
+        <form id="frmRegistro" name="frmRegistro" action="nominaFacturar.php" method="POST">
 
-          <a href="crearRol.php" class="btn btn-outline-success">Crear Rol</a> <!--boton -->
+          <a href="consoNomina.php" class="btn btn-outline-success">Consolidado</a> <!--boton -->
           <p></p>
-          <h5 class="card-title">Asignar Rol a Empleado</h5>
+          <h5 class="card-title">Elegir Empleado</h5>
           <!-- Primer fila de inputs -->
           <div class="row g-3">   
             <div class="col-sm-4">
@@ -45,29 +45,11 @@
 	                <?php endwhile; ?>
                 </select>
               <?php endif ?>
-            </div>
-            <div class="col-sm-2">
-              <!-- solicito la conexion y el query para mostrar datos de tabla en select -->
-              <?php include '../dataBase/adminSis/selects.php';  
-                 if ($resultadoRol): ?>
-                <select class="form-select" name="idRol" id="idRol">  <!-- select que captura los option value -->
-                  <option value="" selected="Elegir...">Seleccione Rol &nbsp ... </option>                  
-                  <?php while ($rowy = mysqli_fetch_array($resultadoRol)): ?>
-	                  <option value ="<?php echo $rowy[0] ?>"><?php echo $rowy[1]?></option>
-	                <?php endwhile; ?>
-                </select>
-              <?php endif ?>
-            </div>
-            <div class="col-sm-2">
-              <input type="text" class="form-control" id="nomUsuario" placeholder="Digita Usuario" value="" required>
-            </div>
-            <div class="col-sm-2">
-              <input type="password" class="form-control" id="passwdUsuario" placeholder="Digita contraseña" value="" required>
-            </div>
+            </div>            
           </div>
           <!-- botones formulario -->
           <p></p>
-          <a href="#" id="registrarRolxPersonal" class="btn btn-success">Añadir Nuevo</a>
+          <button type="submit" id="preFacturaNomina" class="btn btn-success"> Ver Pago Nomina</button>
           <a type="#" id="borrarCampos" class="btn btn-danger">Borrar campos</a>
           </form>
         </div>  <!--card-body-->

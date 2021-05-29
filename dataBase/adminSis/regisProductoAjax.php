@@ -7,6 +7,7 @@
 		$codiProducto=$_POST['codiProducto'];  // creo variable $numdoc y le asigno los datos recibidos desde regisEst.php
 		$nomProducto=$_POST['nomProducto'];  // creo variable $nombre y le asigno los datos recibidos desde regisEst.php
 		$preProducto=$_POST['preProducto'];
+		$cantProducto=$_POST['cantProducto'];
 
 	// de buscaRepetido se responde a regisEst.php mediante el echo
 		if(buscaRepetido($categoria,$codiProducto,$nomProducto,$preProducto,$conexion)==1){  // si el resultado de la funcion es igual a 1
@@ -15,8 +16,8 @@
             // realizar inserccion de datos a la base de datos
             // insertar en la tabla personal en los campos (*,*,*,*)
             //los valores de las variables ('*','*','*','*')
-			$sql="INSERT into pruducto (nomProducto,codiProducto,idCategoria,precioProducto)
-				values ('$nomProducto','$codiProducto','$categoria','$preProducto')";
+			$sql="INSERT into pruducto (nomProducto,codiProducto,idCategoria,precioProducto,cantProd)
+				values ('$nomProducto','$codiProducto','$categoria','$preProducto','$cantProducto')";
 			$result=mysqli_query($conexion,$sql); ////la funcion mysqli_query devulve un valor mayor a 0 si encuentra resultado de $sql en $conexion
 
 		}

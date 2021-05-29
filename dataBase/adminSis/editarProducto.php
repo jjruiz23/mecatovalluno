@@ -9,7 +9,7 @@
                 $id = $_GET['id'];   // alamcenar en variable dato caputado                                
                 // select para mostrar datos de tabla PERSONAL
                 
-                $sql = "SELECT  p.idProducto, p.nomProducto, p.codiProducto, c.nomCategoria, p.precioProducto, p.idCategoria
+                $sql = "SELECT  p.idProducto, p.nomProducto, p.codiProducto, c.nomCategoria, p.precioProducto, p.idCategoria, p.cantProd
                         FROM pruducto p
                         INNER JOIN categoria c ON p.idCategoria = c.idCategoria
                         WHERE p.idProducto=$id";
@@ -33,6 +33,8 @@
                         $c_nomCategoria = $row['nomCategoria'];      // valor para enviar por formulario
                         $p_precioProducto = $row['precioProducto'];      // valor para enviar por formulario
                         $p_idCategoria = $row['idCategoria'];      // valor para enviar por formulario
+                        $p_cantProd = $row['cantProd'];      // valor para enviar por formulario
+
                 }
                 
         }

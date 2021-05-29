@@ -25,12 +25,12 @@
 
       <!-- card con informacion del modulo -->
       <div class="card">
-        <h5 class="card-header">Productos</h5> <!--titulo -->
+        <h5 class="card-header">Item Invetario</h5> <!--titulo -->
         <div class="card-body">
         <a href="buscProductoResul.php" class="btn btn-outline-success" >Buscar</a> <!--boton -->
-        <a href="consoProducto.php" class="btn btn-outline-success">Consolidado</a> <!--boton -->
+        <a href="consoInvProd.php" class="btn btn-outline-success">Consolidado</a> <!--boton -->
         <p></p>
-        <h5 class="card-title">Editar Producto</h5>
+        <h5 class="card-title">Editar Item</h5>
 
         <form id="frmRegistro">
           <!-- solicito el query con los datos de consulta para mostrar y porteriormente editar -->
@@ -55,7 +55,7 @@
             </div>
             <div class="col-sm-4">
               <!-- INPUT se muestra el valor de la variable -->
-              <input type="text" value="<?php echo $p_codiProducto;?>" class="form-control" id="codiProducto" placeholder="codiProducto" value="" required>
+              <input type="text" value="<?php echo $p_codiProducto;?>" class="form-control" id="codiProducto" placeholder="codiItem" value="" required>
             </div>
             <div class="col-sm-1">
               <!-- INPUT oculto para enviar el valor de la variable -->
@@ -68,8 +68,11 @@
             <div class="col-sm-4">
               <input type="text" value="<?php echo $p_nomProducto;?>" class="form-control" id="nomProducto" placeholder="nomProducto" value="" required>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-2">
               <input type="text" value="<?php echo $p_precioProducto;?>" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="preProducto" placeholder="Precio Producto" required>
+            </div>
+            <div class="col-sm-2">
+              <input type="text" value="<?php echo $p_cantProd;?>" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" id="cantProducto" placeholder="Cantidad Producto" required>
             </div>
           </div>
           <p></p>

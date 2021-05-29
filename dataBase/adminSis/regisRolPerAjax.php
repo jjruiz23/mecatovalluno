@@ -4,7 +4,9 @@
 	$conexion=conexion();  //creo variable $conexion y le asigno los valores de la funcion conexion importada por conexion.hp
 
 		$idPer=$_POST['idPer']; // creo variable $tipodoc y le asigno los datos recibidos desde regisEst.php
-		$idRol=$_POST['idRol']; // creo variable $tipodoc y le asigno los datos recibidos desde regisEst.php
+		$idRol=$_POST['idRol'];
+		$nomUsuario=$_POST['nomUsuario'];
+		$passwdUsuario=$_POST['passwdUsuario']; 
 		
 	// de buscaRepetido se responde a regisEst.php mediante el echo
 		if(buscaRepetido($idRol,$idPer,$conexion)==1){  // si el resultado de la funcion es igual a 1
@@ -15,7 +17,11 @@
             //los valores de las variables ('*','*','*','*')
 			$sql="INSERT into rol_x_personal (idRol,idPer) values ('$idRol','$idPer')";
 			$result=mysqli_query($conexion,$sql); ////la funcion mysqli_query devulve un valor mayor a 0 si encuentra resultado de $sql en $conexion
+			
+			$sql2="INSERT into usuario (nomUusuarios,idPer,idPermiso,passwd) values ('$nomUsuario','$idPer','$idRol','$passwdUsuario')";
+			$result2=mysqli_query($conexion,$sql2); ////la funcion mysqli_query devulve un valor mayor a 0 si encuentra resultado de $sql en $conexion
 
+		
 		}
        
 		// creo funcion buscaRepetido y le paso los datos de las variables creadas (tipo de documento, numero de documento y conexion)
